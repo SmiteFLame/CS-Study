@@ -49,6 +49,16 @@
 - IPC
   - Pipe, Named Pipe, Message Queue, 공유 메모리, 메모리 맵, 소켓, 세마포어
 
+[네트워크](https://github.com/SmiteFLame/CS-Study/blob/master/NT/README.md)
+
+- OSI 7계층
+- 웹 동작 방식
+- GET VS POST
+- HTTP VS HTTPS
+- TCP VS UDP
+- 프록시 서버
+- 네트워크 망의 종류
+
 <hr>
 
 ## 작성 예정
@@ -58,8 +68,6 @@
 [알고리즘](#운영체제/README.md)
 
 [데이터베이스](#데이터베이스/README.md)
-
-[네트워크](#네트워크/README.md)
 
 [JAVA](#JAVA/README.md)
 
