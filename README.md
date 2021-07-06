@@ -1,4 +1,10 @@
-# 작성완료
+# CS 정리
+
+2021년 취업을 위한 CS 지식 정리 github
+
+[많이 나왔던 면접 질문 리스트](https://github.com/SmiteFLame/CS-Study/blob/master/Question/README.md)
+
+<hr>
 
 [운영체제](https://github.com/SmiteFLame/CS-Study/blob/master/OS/README.md)
 
@@ -43,7 +49,9 @@
 - IPC
   - Pipe, Named Pipe, Message Queue, 공유 메모리, 메모리 맵, 소켓, 세마포어
 
-# 작성 중
+<hr>
+
+## 작성 예정
 
 [자료구조](#자료구조/README.md)
 
