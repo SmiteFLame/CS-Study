@@ -59,6 +59,24 @@
 - 프록시 서버
 - 네트워크 망의 종류
 
+[데이터베이스](https://github.com/SmiteFLame/CS-Study/blob/master/DB/README.md)
+
+- 데이터베이스 튜닝
+- 무결성
+  - 무결성의 종류
+- 트랜잭션
+  - 트랜잭션 ACID
+  - 트랜잭션 병행처리 문제
+- 이상현상
+- DB락
+- 인덱스 및 뷰
+- 정규화
+- 관계형 데이터베이스
+  - RDBMS vs NoSQL
+- 격리 수준
+  - 격리성 관련 문제
+- Delete VS Truncate VS Drop
+
 <hr>
 
 ## 작성 예정
