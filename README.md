@@ -77,7 +77,7 @@
   - 격리성 관련 문제
 - Delete VS Truncate VS Drop
 
-[자바](https://github.com/SmiteFLame/CS-Study/blob/master/DB/README.md)
+[자바](https://github.com/SmiteFLame/CS-Study/blob/master/JAVA/README.md)
 
 - JAVA
   - JAVA의 특징
