@@ -77,7 +77,41 @@
   - 격리성 관련 문제
 - Delete VS Truncate VS Drop
 
-<hr>
+[자바](https://github.com/SmiteFLame/CS-Study/blob/master/DB/README.md)
+
+- JAVA
+  - JAVA의 특징
+  - JAVA의 메모리 영역
+  - JVM
+- JAVA의 종류
+  - JDK
+  - JAVA SE
+  - JAVA EE
+  - JAVA ME
+- OOP
+  - 5원칙
+  - 4특징
+- Generic
+- Boxing vs Unboxing
+- 자바 클래스 멤버 변수 초기화 순서
+- Serializable
+- 상속
+- Garbage Collection
+- 추상클래스 VS 인터페이스
+  - 추상클래스
+  - 인터페이스
+- JDBC
+- WebServer vs WAS Server
+- 에러 VS 예외
+- Collection
+  - List vs Set vs Map
+  - ArrayList vs LinkedList
+  - HashMap Null?
+  - HashMap vs TreeMap vs LinkedHashMap vs HashTable
+- Call By Value vs Call By Reference
+  - Call By Value
+  - Call By Reference
+  <hr>
 
 ## 작성 예정
 
