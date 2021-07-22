@@ -81,8 +81,8 @@
 
 - JAVA
   - JAVA의 특징
-  - JAVA의 메모리 영역
   - JVM
+  - JAVA의 메모리 영역
 - JAVA의 종류
   - JDK
   - JAVA SE
