@@ -164,14 +164,14 @@ NoSQL의 큰 장점은 JOIN처리가 없어서 노드 확장이 용이하다 그
 ### 격리성 관련 문제점
 
 1. Dirty Read - 트랜 잭션이 작업이 완료되지 않았는데도 다른 트랜 잭션에서 볼 수 있는 현상
-2. Non-RepeatedRead - T1이 Select한 사이에 T2가 Update나 delete를 한 경우
+2. Non-RepeatedRead -트랜잭션의 조회가 처음과 마지막이 다르게 나올 수 있다.
 3. Phantom Read - T!이 같은 쿼리를 두번 수행시 첫번째 실행시 없던 레코드가 두번째 나오는 경우
 
 ### 격리 수준
 
 1. READ UNCOMMITTED
-2. READ COMMITTED - 다른 트랜잭션이 commit한 데이터만 읽는 것을 허용
-3. Repeatable Read - 다른 트랜잭션이 읽는 동안 수정, 삭제 불가
+2. READ COMMITTED - 다른 트랜잭션이 commit한 데이터만 수정만을 허용
+3. Repeatable Read - 다른 트랜잭션이 읽는 동안 삽입, 삭제 불가
 4. Serializable - 다른 트랜잭션이 읽는 동안 삽입도 불가능, 동시 성능은 급격히 떨어질 수 있다.
 
 <hr>
