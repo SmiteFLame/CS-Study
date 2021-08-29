@@ -6,148 +6,30 @@
 
 <hr>
 
-[운영체제](https://github.com/SmiteFLame/CS-Study/blob/master/OS/README.md)
+## CS 지식
 
-- 프로세스, 스레드
-  - 프로세스
-  - 스레드
-  - Context Switching
-  - Interrupt
-  - 멀티스레드
-  - 프로그램 VS 프로세스
-  - 프로세스 VS 스레드
-  - 멀티프로그래밍 VS 멀티프로세싱
-  - 멀티스레드 VS 멀티프로세스
-- 스케쥴러
-  - 장기 스케줄러 (Job Scheduler)
-  - 단기 스케줄러 (CPU Controller)
-    - FCFS, SJF, SRTF, Priorty Scheduling, RR
-  - 중기 스케줄러 (Swapper)
-- 동기화
-  - 동기 VS 비동기
-  - Critical Section
-  - 세마포어 VS 뮤텍스
-- 메모리 영역
-  - 코드 영역
-  - 데이터 영역
-  - 스택 영역
-  - 힙 영역
-  - 스택 영역 VS 힙 영역
-- 메모리 관리 전략
-  - Swapping
-  - 단편화
-  - Paging 기법
-  - Segmentation 기법
-- 가상메모리
-  - 페이지
-  - 페이지 폴트
-  - 프로세스간의 페이지 공유
-  - 페이지 교체
-- 캐시의 지역성 원리
-- 시스템 콜
-  - 커널
-- IPC
-  - Pipe, Named Pipe, Message Queue, 공유 메모리, 메모리 맵, 소켓, 세마포어
+1. [운영체제](https://github.com/SmiteFLame/CS-Study/blob/master/OS/README.md)
 
-[네트워크](https://github.com/SmiteFLame/CS-Study/blob/master/NT/README.md)
+2. [네트워크](https://github.com/SmiteFLame/CS-Study/blob/master/NT/README.md)
 
-- OSI 7계층
-- 웹 동작 방식
-- GET VS POST
-- HTTP VS HTTPS
-- TCP VS UDP
-- 프록시 서버
-- 네트워크 망의 종류
+3. [데이터베이스](https://github.com/SmiteFLame/CS-Study/blob/master/DB/README.md)
 
-[데이터베이스](https://github.com/SmiteFLame/CS-Study/blob/master/DB/README.md)
+4. [JAVA](https://github.com/SmiteFLame/CS-Study/blob/master/JAVA/README.md)
 
-- 데이터베이스 튜닝
-- 무결성
-  - 무결성의 종류
-- 트랜잭션
-  - 트랜잭션 ACID
-  - 트랜잭션 병행처리 문제
-- 이상현상
-- DB락
-- 인덱스 및 뷰
-- 정규화
-- 관계형 데이터베이스
-  - RDBMS vs NoSQL
-- 격리 수준
-  - 격리성 관련 문제
-- Delete VS Truncate VS Drop
+5. [Spring](https://github.com/SmiteFLame/CS-Study/blob/master/Spring/README.md)
 
-[JAVA](https://github.com/SmiteFLame/CS-Study/blob/master/JAVA/README.md)
+## 작성 중인 내용
 
-- JAVA
-  - JAVA의 특징
-  - JVM
-  - JAVA의 메모리 영역
-- JAVA의 종류
-  - JDK
-  - JAVA SE
-  - JAVA EE
-  - JAVA ME
-- OOP
-  - 5원칙
-  - 4특징
-- Generic
-- Boxing vs Unboxing
-- 자바 클래스 멤버 변수 초기화 순서
-- Serializable
-- 상속
-- Garbage Collection
-- 추상클래스 VS 인터페이스
-  - 추상클래스
-  - 인터페이스
-- JDBC
-- WebServer vs WAS Server
-- 에러 VS 예외
-- Collection
-  - List vs Set vs Map
-  - ArrayList vs LinkedList
-  - HashMap Null?
-  - HashMap vs TreeMap vs LinkedHashMap vs HashTable
-- Call By Value vs Call By Reference
+1. [FrontEnd](https://github.com/SmiteFLame/CS-Study/blob/master/FrontEnd/README.md)
 
-  - Call By Value
-  - Call By Reference
-  <hr>
-
-  [Spring](https://github.com/SmiteFLame/CS-Study/blob/master/Spring/README.md)
-
-- Spring
-  - 프레임 워크
-  - 프레임 워크 VS 라이브러리
-  - MVC2
-- 컨테이너
-  - 동작 원리
-  - 특징
-- Spring의 특징
-  - IOC
-  - DI
-  - IOC VS DI
-  - POJO
-  - AOP
-  - MAVEN
-  - Spring Boot
-- 구성요소
-  - 기본 환경 설정 파일
-  - Spring MVC 구성 요소
-  - 동작 순서
-- REST
-  - 특징
-  - 장점
-  - 단점
-- 데이터베이스 연동
-  - MyBatis
-  - JPA
-  <hr>
+2. [Kotlin](https://github.com/SmiteFLame/CS-Study/blob/master/Kotlin/README.md)
 
 ## 작성 예정
 
-[자료구조](#자료구조/README.md)
-
-[알고리즘](#운영체제/README.md)
-
-[데이터베이스](#데이터베이스/README.md)
+1. 자료구조
+2. 알고리즘
+3. 그래픽스
+4. 디자인 패턴
+5. 인공지능
+6. C++
+7. 도커, 쿠버네티스
