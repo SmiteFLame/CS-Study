@@ -1,4 +1,4 @@
-# FrontENd
+# FrontEnd
 
 ## AJAX
 
