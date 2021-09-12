@@ -6,23 +6,17 @@
 
 <hr>
 
-## CS 지식
+## CS 지식 (계속 작성중)
 
 1. [운영체제](https://github.com/SmiteFLame/CS-Study/blob/master/OS/README.md)
-
 2. [네트워크](https://github.com/SmiteFLame/CS-Study/blob/master/NT/README.md)
-
 3. [데이터베이스](https://github.com/SmiteFLame/CS-Study/blob/master/DB/README.md)
-
 4. [JAVA](https://github.com/SmiteFLame/CS-Study/blob/master/JAVA/README.md)
-
 5. [Spring](https://github.com/SmiteFLame/CS-Study/blob/master/Spring/README.md)
-
-## 작성 중인 내용
-
-1. [FrontEnd](https://github.com/SmiteFLame/CS-Study/blob/master/FrontEnd/README.md)
-
-2. [Kotlin](https://github.com/SmiteFLame/CS-Study/blob/master/Kotlin/README.md)
+6. [FrontEnd(작성중)](https://github.com/SmiteFLame/CS-Study/blob/master/FrontEnd/README.md)
+7. [Kotlin(작성중)](https://github.com/SmiteFLame/CS-Study/blob/master/Kotlin/README.md)
+8. [인프라(작성중)](https://github.com/SmiteFLame/CS-Study/blob/master/Infra/README.md)
+9. [객치지향(작성중)](https://github.com/SmiteFLame/CS-Study/blob/master/OOP/README.md)
 
 ## 작성 예정
 
