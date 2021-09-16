@@ -4,6 +4,8 @@
 
 [많이 나왔던 면접 질문 리스트](https://github.com/SmiteFLame/CS-Study/blob/master/Question/README.md)
 
+[백앤드 개발자를 위한 면접 준비](https://github.com/SmiteFLame/CS-Study/blob/master/Summary/README.md)
+
 <hr>
 
 ## CS 지식 (계속 작성중)
