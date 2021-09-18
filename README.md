@@ -19,6 +19,7 @@
 7. [Kotlin(작성중)](https://github.com/SmiteFLame/CS-Study/blob/master/Kotlin/README.md)
 8. [인프라(작성중)](https://github.com/SmiteFLame/CS-Study/blob/master/Infra/README.md)
 9. [객체지향(작성중)](https://github.com/SmiteFLame/CS-Study/blob/master/OOP/README.md)
+10. [REST(작성중)](https://github.com/SmiteFLame/CS-Study/blob/master/REST/README.md)
 
 ## 작성 예정
 
