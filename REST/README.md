@@ -35,6 +35,15 @@ Representational State Transfer API(표현 상태 전송 API)<br>
 - 작업을 위한 상태 정보를 따로 저장하고 관리하지 않는다
 - 세션 정보나 쿠키 정보를 별도로 저장하고 관리하지 않기 때문에 API 서버는 들어오는 요청만 단순히 처리한다
 - 서비스의 자유도가 높아지고 서버에서 불필요한 정보를 관리하지 않음으로써 구현이 단순해진다.
+- Stateful - Server와 Client간 세션의 'State(상태)'에 기반하여 Client에 response를 보낸다
+  - 세션 상태를 포함한 Client와 세션 정보를 Server에 저장하게 된다
+  - EX) TCP (3-way handshaking 처럼 SYN과 STNACK를 주고 받으면서 서로의 상태를 확인한다)
+  - 세션의 정보를 Server에 저장하고 세션 상태에 따른 응답을 한다
+- 장점
+  - Scaling이 자유롭다
+    - Stateful 같은 경우는 Client의 세션 정보가 새로 Scale out된 서버에 저장되어 있지 않다
+    - 세션 정보를 옮겨주는 부수적인 관리가 필요하다
+    - Statless같은 경우 Server는 Client 세션 관리를 하지 않으므로 Scale out을 편하게 할 수 있다
 
 3. Cacheable(캐시 가능)
 
@@ -59,3 +68,16 @@ Representational State Transfer API(표현 상태 전송 API)<br>
 
 1. URI는 정보의 자원을 표현해야한다
 2. 자원에 대한 행위는 HTTP METHOD(GET, POSt, PUT, DELETE)로 표현한다
+
+### HTTP vs REST
+
+- HTTP는 Stateless한 성격을 가진 '프로토콜'
+  - HTTP를 사용해서 정해둔 스펙으로 데이터를 주고 받으며 통신하는 것
+- REST는 Stateless한 성격을 가진 '설계 구조'
+  - HTTP에 제약 조건이 추가가 된다
+    - 자원의 식별
+    - 메시지를 통한 리소스 조작
+    - 자기서술적 메서지
+    - 애플리케이션의 상태에 대한 엔진으로서 하이퍼미디어
+- 즉, REST는 HTTP의 방법이다
+  - HTML처럼 하이퍼 링크가 추가되어 어떤 API를 호출해야 하는지 해당 링크를 통해서 받을 수 있어야 한다
