@@ -85,3 +85,35 @@ Representational State Transfer API(표현 상태 전송 API)<br>
     - 애플리케이션의 상태에 대한 엔진으로서 하이퍼미디어
 - 즉, REST는 HTTP의 방법이다
   - HTML처럼 하이퍼 링크가 추가되어 어떤 API를 호출해야 하는지 해당 링크를 통해서 받을 수 있어야 한다
+
+## REST API의 규칙
+
+1. URI는 정보의 자원을 표현해야 한다(리소스 명은 동사보다는 명사를 사용)
+
+- DELETE와 같은 행위는 표현이 들어가서는 안된다
+
+2. 자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE 등)로 표현
+
+- 회원 정보를 가져오는 경우: GET
+- 회원 정보를 추가하는 경우: POST
+- 회원 정보를 수정하는 경우: PUT
+- 회원 정보를 삭제하는 경우: DELETE
+
+URI는 자원을 표현하는 데 집중하고 행위에 대한 정의는 HTTP METHOD를 통해 REST한 API를 설계하는 중심 규칙
+
+```
+GET - /members/show/1 - X
+GET - /members/1 - O
+
+GET - /members/delete/2 - X
+DELETE - /members/2 - O
+```
+
+### URI 설계시
+
+1. 슬래시 구분자('/')는 계층 관계를 나타내는 데 사용
+2. URI 마지막 문자로 슬래시 구분자 ('/')을 포함하지 않는다
+3. 하이픈('-')은 URI 가독성을 높이는데 사용한다
+4. 밑줄('\_')은 URI에 사용하지 않는다
+5. URI 경로는 소문자를 사용한다(대소문자에 따라 다른 리소스로 파악된다)
+6. 파일 확장자(EX: JPG, PNG)는 URI에 포함하지 않는다
