@@ -117,3 +117,39 @@ DELETE - /members/2 - O
 4. 밑줄('\_')은 URI에 사용하지 않는다
 5. URI 경로는 소문자를 사용한다(대소문자에 따라 다른 리소스로 파악된다)
 6. 파일 확장자(EX: JPG, PNG)는 URI에 포함하지 않는다
+
+### 리소스 간의 관계를 표현하는 방법
+
+```
+/리소스명/리소스 ID/관계가 있는 다른 리소스명
+GET /users/{userid}/devices
+```
+
+관계 명이 복잡하다면 이를 서브 리소스에 명시적으로 표현할 수 있다
+
+### Collection와 Document
+
+```
+/sports/soccer/players/13
+```
+
+- Collection: Sports, Players
+- Document: soccer, 13
+- 이 둘을 사용하고 단수 복수를 사용하여 좀 더 이해하기 쉬운 URI를 설계할 수 있다
+
+## HTTP 응답코드
+
+- 2XX
+  - 200(OK): 클라이언트의 요청을 정상적으로 수행함
+  - 201(CREATED): 클라이언트가 어떠한 리소스 생성을 요청, 해당 리소스가 성공적으로 생성됨(POST)
+- 3XX
+  - 300(MULTIPLE CHOICE): 요청에 대한 응답이 하나 이상 존재하여 사용자는 하나를 골라야 한다
+  - 301(MOVED PERMANETLY): 클라이언트가 요청한 리소스에 대한 URI가 변경되었을 경우
+- 4XX
+  - 400(BAD REQUEST): 클라이언트의 요청이 부적절 할 경우 사용하는 응답코드
+  - 401(UNAUTHORIZEd): 클라이언트가 인증되지 않은 상태에서 보호된 리소스를 요청했을 떄 사용하는 코드(로그인 안한유저가 로그인 후 가능한 요청을 시도)
+  - 403(FORBIDDEN): 유저 인증 상태와 상관 없이 응답하고 싶지 않은 리소스를 요청했을 때
+  - 404(NOT FOUND): 클라리언트가 요청한 리소스에서는 사용 불가능한 Method를 이용했을 경우
+- 5XX
+  - 500(INTERNAL SERVER ERROR): 서버에 문제가 있는 경우
+  - 501(NOT IMPLEMENTED): 서버가 요청을 이행하는 데 필요한 기능을 지원하지 않음
