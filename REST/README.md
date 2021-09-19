@@ -39,11 +39,15 @@ Representational State Transfer API(표현 상태 전송 API)<br>
   - 세션 상태를 포함한 Client와 세션 정보를 Server에 저장하게 된다
   - EX) TCP (3-way handshaking 처럼 SYN과 STNACK를 주고 받으면서 서로의 상태를 확인한다)
   - 세션의 정보를 Server에 저장하고 세션 상태에 따른 응답을 한다
+  - Client A가 로드밸런서를 통해 Server #1에 저장이 되면 Client A의 세션 정보가 저장이 된다
+  - 로드밸런서를 연결하여 Server #2에 연결하는 경우 Client A에 대한 정보가 없으므로 세션 인증을 처음부터 다시 연결해야 한다
+  - 이러한 중복 작업을 없애기 위해서는 Client A의 요청은 Server #1을 향애 유지되도록 관리를 해야한다
 - 장점
   - Scaling이 자유롭다
     - Stateful 같은 경우는 Client의 세션 정보가 새로 Scale out된 서버에 저장되어 있지 않다
     - 세션 정보를 옮겨주는 부수적인 관리가 필요하다
     - Statless같은 경우 Server는 Client 세션 관리를 하지 않으므로 Scale out을 편하게 할 수 있다
+    - Stateless 서비스 구조는 Client의 정보들을 외부 DB에 저장을 하게 된다
 
 3. Cacheable(캐시 가능)
 
