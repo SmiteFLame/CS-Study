@@ -289,9 +289,25 @@ DB서버: 공유메모리들이 존재하고 여러 포르세스들이 참조한
 
 - Scale-up: Server가 더 빠르게 동작하기 위해 하드웨어 성능을 올리는 방법
 - Scale-out: 하나의 Server보다는 여러 대의 Server가 나눠서 일을 하는 방법
+
   - 하드웨어 서버 향상하는 비용보다 서버 한대 추가 비용이 더 작다
   - 여러 대의 Server 덕분에 무중단 서비스를 제공할 수 있다.
   - 여러 대의 Server에 균등하게 Traffic을 분산시켜주는 역할을 하는 것이 `Load Balancer`이다
+
+- NAT
+  - 사설 IP주소를 공인 IP 주소로 바꾸는 데 사용하는 통신망의 주소 변조기
+- Tunneling
+  - 인터넷 상에서 눈에 보이지 않는 통로를 만들어서 통신할 수 있게 한다
+  - 데이터를 캡슐화해서 연결된 상호간에만 캡슐화된 패킷을 구별해 캡슐화를 해제할 수 있다.
+- DSR(Dynamic Source Routing Protocol)
+
+  - 로브 밸런서 사용시 클라이언트로 되돌아가는 경우 목적지 주소를 스위치 IP 주소가 아닌 클라이언트 IP 주소로 전달
+  - 네트워크 스위치를 거치지 않고 클라리언트를 찾아가는 개념
+
+- L2: Mac주소를 바탕으로 Load Balancing
+- L3: IP 주소를 바탕으로 Load Balancing
+- L4: Transport Layer(IP와 Port) Level에서 Load Balancing
+- L7: Application Layer(사용자의 Request) Level에서 Load Balancing
 
 ## Scaling
 
