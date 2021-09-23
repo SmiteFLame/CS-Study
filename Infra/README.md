@@ -396,10 +396,12 @@ httpd: HTTP PROTOCOL을 지원하는 Daemon, 즉, HTML 파일을 전송해주는
 daemon: 서비스의 요청에 대해 응답하는 오랫동안 실행중인 백그라운드(background) 프로세스다.
 
 - 유닉스(리눅스 포함) 운영체제에서 이름이 "d"로 끝나는 프로세스(inetd, httpd, nfsd, sshd, named, lpd 등)이다.
+- 부팅 때 자동으로 켜져 백그라운드에서 계속 실행되면서 꺼지지 않고 실시간으로 클라이언트와 통신을 계속 해야하는 서버 프로세스
 
 background process: 입력장치에 대해 터미널과 관계를 끊은 모든 프로세스
 
 - 사용자에게 무언가를 키보드를 통해 전달받지 않고 스스로 동작하는 프로세스
+- 눈에 보이진 않지만 뒷 지역, 배경(Background)에서 묵묵히 할 일 하는 프로세스
 
 `http://www.naver.com`을 입력하는 것은 HTTP를 이용해서 `www.naver.com` 서버 접속하는 것을 의미한다
 
