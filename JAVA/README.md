@@ -316,3 +316,31 @@ HashTable - Map 인터페이스를 구현한 클래스로 중복허용X, 동기�
 ### Call By Reference
 
 - 함수 안에서 인자의 값을 변경되면, Argument로 전달된 객체의 값도 변경된다.
+
+## Servlet
+
+클라이언트 요청을 처리하고 그 결과를 반환하는 웹 프로그래밍 기술
+
+- 클라이언트의 요청에 대해 동적으로 작동하는 웹 애플리케이션 컴포넌트
+- HTML을 사용하여 요청에 응답
+- JAVA THREAD를 이욯새ㅓ 동작
+- MVC 패턴에서 Controller에서 이용된다
+- HTTP 프로토콜 서비스를 지원하는 HttpServlet클래스를 상속받는다
+
+### 동작 방식
+
+1. 클라이언트가 URL를 입력하면 HTTP Request가 Servlet Container로 전송한다
+2. 요청을 전송받은 Servlet Continaer는 HttpServletRequest, HttpServletResponse 객체를 생성
+3. web.xml을 기반으로 사용자가 요청한 URL이 어느 Servlet에 대한 요청인지 찾는다
+4. 해당 Servlet에서 Service 메서드를 호출한 후 클라이언트에 GET, POST 여부에 따라 doGet, doPost를 호출
+5. 해당하는 동적페이지를 생성 후 HttpServletResponse 객체에 응답을 보낸다
+6. 응답이 끝나면 HttpServletRequest, HttpServletResponse 객체를 소멸
+
+### Servlet Continaer
+
+서블릿을 관리해 주는 역할
+
+- 클라이언트의 Request와 Response를 할 수 있게 Web Server와 Socket 통신한다
+- Servlet 생명 주기를 관리한다
+- 멀티 쓰레드를 지원하고 관리,
+- 선언적인 보안 관리를 해준다
