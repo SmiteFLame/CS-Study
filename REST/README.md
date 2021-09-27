@@ -54,6 +54,17 @@ Representational State Transfer API(표현 상태 전송 API)<br>
 - HTTP라는 기존 웹 표준을 그대로 사용하기 떄문에, 웹에서 사용하는 기존 인프라를 그대로 활용이 가능
 - HTTP 프로토콜 표준에서 사용하는 Last-Midified태그나 E-Tag를 이용하면 캐싱 구현 가능
 
+- PUT, DELETE에는 사용이 불가능하며 주로 GET에 일반적으로 사용한다
+  - POST는 일반적으로 불가능 하지만 리소스의 만료시간(Expires), 리소스가 생성된 시간부터 상대적 시간(Cache-Control)을 통해서 사용가능하다
+
+- E-Tag: 리소스를 특정 문자열로 변경한 값이다
+  - 만약 리소스가 변경되면 이 값도 변경이 해제 되면서 cache 적용이 해제된다
+  - Client에서는 ETag를 체크하기 위해 문자열을 헤더와 함께 보내고 캐시를 확인하여 용도의 해저 조건을 확인한다
+  - etag와 동일하면 304(Not Modified), 동일하지 않으면 200과 리소스를 반환한다
+- Last-Modified
+  - 해당 리소스가 마지막으로 변경되었는지 확인한다
+  - 헤더를 보냈을 때 Last-Modified가 If-Modified-Since보다 작다면 304, 아니면 200과 리소스를 반환한다
+
 4. Self-descriptiveness(자체 표현 구조)
 
 - REST API 메시지만 보고도 이를 쉽게 이해할 수 있어야 한다
@@ -126,6 +137,13 @@ GET /users/{userid}/devices
 ```
 
 관계 명이 복잡하다면 이를 서브 리소스에 명시적으로 표현할 수 있다
+```
+/ 사용자가 가지고 있는 디바이스 (기본형)
+GET /users/{userid}/devices
+/ 사용자가 좋아하는 디바이스
+GET /users/{userid}/likes/devices
+
+```
 
 ### Collection와 Document
 
