@@ -14,11 +14,11 @@ Representational State Transfer API(표현 상태 전송 API)<br>
 
 2. 행위(Verb), Method
 
-- 클라이언트는 URI를 이용햐 자원을 지정하고 조작하기 위해 Method를 사용한다. (GET, POST, PUT, DELETE)
+- 클라이언트는 URI를 이용해서 자원을 지정하고 조작하기 위해 Method를 사용한다. (GET, POST, PUT, DELETE)
 
 3. 표현(Representation)
 
-- 클라이언트가 서버로 요청을 보냈을 때 서버가 응답으로 보내주는 자원의 상태를 Representatio
+- 클라이언트가 서버로 요청을 보냈을 때 서버가 응답으로 보내주는 자원의 상태를 표현
 
 ## REST의 특징
 
