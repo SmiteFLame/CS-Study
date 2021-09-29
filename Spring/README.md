@@ -29,6 +29,9 @@ Controller는 View에 받은 요청을 가공하여 Model(Service)에 전달하�
 
 Servlet을 실행하고 관리하는 역할을 한다
 
+- 코드의 처리과정을 위임 받은 독립적인 객체
+- 적절한 설정만 되어 있으면 누구의 도움 없이도 프로그래머가 작성한 코드를 스스로 참조한 뒤 알아서 객체의 생성과 소멸을 컨트롤 해준다
+
 ### 동작 원리
 
 1. Requetst와 Response 객체를 생성한다.
@@ -207,6 +210,16 @@ JPA는 단순히 명세이기 떄문에 구현이 없다. 대부분 Interface, E
 ### 동작원리
 
 - JPA에서 알아서 쿼리문으로 변환해 JDBC로 전달한 다음, JDBC는 해당 쿼리문을 DB에 전송해 결과값을 가지고 온다
+
+- DataSource를 통해서 연결한다
+   - DB Server와 기본적인 연결을 한다
+   - DB Connection Pooling 기능을 사용한다
+   - 트랜잭션 처리를 한다
+- DB Server에 관한 정보를 설정
+- property file 위치 저장
+- 반드시 필요한 parameter 속성으로 설정
+- 해당 datasource를 bean으로 등록
+
 
 ## Impl 분리하는 이유
 
