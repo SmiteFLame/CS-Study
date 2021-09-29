@@ -241,10 +241,28 @@ x.a(3);
 
 <hr>
 
-### JDBC
+## JDBC
 
 - 자바에서 데이터베이스를 접속할 수 있도록 하는 자바 API
-- 데이터 베이스에 자료를 쿼리문을 작성하거나 업데이트 하는 방법을 제공하고 잇다.
+- 데이터 베이스에 자료를 쿼리문을 작성하거나 업데이트 하는 방법을 제공하고 있다
+- JDBC가 없으면 데이터베이스 종류마다 각각의 SQL문을 사용해야 했다
+
+- JAVA 코드로 DB 서버에 접속
+- SQL문을 구성하고 DB서버에서 실행
+- DB서버에서 처리한 결과를 가져오기
+- DB의 정보를 가져오기
+
+### JDBC 동작 순서
+
+1. DriverManager를 통해서 Connection 인스턴스를 얻는다
+  - Connection: 데이터베이스와 연결하는 객체
+2. Connection을 통해서 Statement를 얻는다
+  - Statemennt: SQL 구문을 실행하는 역할
+  - 스스로 SQL 구문을 이해하지 않지만 SQL 관리를 한다
+3. Statement를 이용해 ResultSet을 얻는다
+  - ResultSet: 결과값을 저장할 수 있다
+    - 저장된 값을 한 행 단위로 타입을 지정해서 가져올 수 있다
+
 
 ### Web Server VS WAS Server
 
