@@ -143,13 +143,16 @@ MVC는 Model-View-Controller으로 구성이 되어 있다
 ### Spring MVC 구성 요소
 
 1. DispatcherServlet - (View와 Controller의 중간 단계)
-   - 클라이언트의 요청을 전달받아 컨트롤러에 요청
+   - Spring Container(Controller의 Life Cycle을 관리)를 생성한다
+   - 클라이언트의 요청을 처음 받아서 Handler에게 전송한다
    - 컨트롤러의 요청을 중앙에서 처리하는 MVC의 핵심 구성 요소
    - Web.xml에 한개 이상의 DispatcherServlet 설정
 2. HandlerMapping
    - 클라이언트의 요청 URL이 어떤 컨트롤러가 처리할 지 결정
 3. Controller
    - 클라이언트의 요청을 처리한 뒤 결과를 DispatcherSerlvet에게 알려준다.
+4. View Resolver
+   - Logical View Name - prefix, suffix -> pysical view object
 
 ### 동작 순서
 
@@ -254,3 +257,33 @@ OOP에서 의존 역전의 원칙과 매우 연관이 된다
 
 - 컴파일 시점에 누락된 의존성을 확인할 수 있다
 - 애플리케이션 구동 시점에 순환 참조 에러를 방지할 수 있다
+
+## Maven VS Gradle
+
+빌드 관리 도구
+
+- 자바 코드와 프로젝트 내에 필요한 각종 xml, properties, jar 파일들을 JVM이나 WAS가 인식할 수 있도록 패키징 해주는 빌드 과정
+- 프로젝트 생성, 테스트 빌드, 배포 등의 작업을 위한 전용 프로그램
+- 필요한 라이브러리들을 설정파일을 통해 자동으로 다운로드 해주고 이를 간편히 관리해주는 도구이다
+
+### Maven
+
+Java용 프로젝트 관리 도구
+
+- 빌드 중인 프로젝트, 빌드 순서, 다양한 외부 라이브러리 종속성 관계를 pom.xml 파일에 명시한다
+- Maven은 외부 저장소에서 필요한 라이브러리와 플러그인들을 다운로드 한 다음, 로컬시스템의 캐시에 모두 저장한다
+
+### Gradle
+
+Groovy 언어(JAVA의 스크립트 언어)를 사용한 빌드 관리 도구
+
+- 프로젝트의 어느 부분이 업데이트 되었는지 알기 때문에, 빌드에 점진적으로 추가할 수 있다
+- 업데이트가 반영된 빌드의 부분은 더 이상 재 실행되지 않는다
+
+### 차이점
+
+- Gradle: 작업 의존성 그래프
+   - 어떤 Task가 업데이트 되었고 안되었는지 체크를 하기 때문에 빌드 시간이 단축이 된다
+   - Concurrent에 안전한 캐시를 허용한다: 두 개 이상의 프로젝트가 동일한 캐시를 쓰게 되면 서로 overwrite되지 않도록 서로 동기화 시킨다
+   - Maven에 비해서 친숙하지는 않지만 확장성이 뛰어나다
+- Maven: 고정적이고 선형적인 단계의 모델
