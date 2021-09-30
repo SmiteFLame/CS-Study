@@ -313,6 +313,8 @@ DB에서 제공해주는 특징을 이용하는 것이 아닌 Application Level�
 
 - 여러 스레드가 동시에 접근하면 동시성 문제가 발생하므로 스레드간 절대 공유하지 않는다
 
+- 객체들의 Flush은 Transaction에서 관리를 하게 되고 여기서는 객체들의 생사를 관리하게 된다
+
 
 ### EntityTransaction
 

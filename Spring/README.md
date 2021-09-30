@@ -207,6 +207,13 @@ JPA는 단순히 명세이기 떄문에 구현이 없다. 대부분 Interface, E
 
 - @EnableJpaRepositories: JpaRepository에 대한 설정 정보를 자동적으로 로딩하고 Repository 빈을 등록하는 역할을 한다
 
+- Entity: JPA가 관리하는 클래스로, 해당 클래스를 Entity라고 부른다
+   - 테이블에 대응하는 하나의 클래스
+   - JPA를 사용하여 테이블과 매핑해야할 클래스는 반드시 @Entity를 선언해야 한다
+- 특징
+   - public, protected이여야 한다
+   - JPA 스팩으로 규정되어 있다
+
 ### 동작원리
 
 - JPA에서 알아서 쿼리문으로 변환해 JDBC로 전달한 다음, JDBC는 해당 쿼리문을 DB에 전송해 결과값을 가지고 온다
