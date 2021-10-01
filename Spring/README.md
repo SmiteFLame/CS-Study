@@ -287,3 +287,57 @@ Groovy 언어(JAVA의 스크립트 언어)를 사용한 빌드 관리 도구
    - Concurrent에 안전한 캐시를 허용한다: 두 개 이상의 프로젝트가 동일한 캐시를 쓰게 되면 서로 overwrite되지 않도록 서로 동기화 시킨다
    - Maven에 비해서 친숙하지는 않지만 확장성이 뛰어나다
 - Maven: 고정적이고 선형적인 단계의 모델
+
+## web.xml
+
+Spring Boot으로 넘어가게 되면서 web.xml을 다른 기능들이 수행한다
+
+1. application.properties: context-param 설정이 들어가 있다
+2. Application.java: 이 함수를 정의하고 @EnableAutoConfiguration을 통해서 대부분의 설정을 자동으로 해준다
+3. @Configuration: Bean 설정을 추가하여 등록을 할 수 있다
+
+- 서블릿 관련 설정은 내부적으로 자동으로 설정이 된다
+- Session-config는 application.properties으로 설정이 가능하다
+
+## RestController VS Controller vs 
+
+Http ResponseBody가 생성되는 방식이 다르다
+
+###  Controller
+
+주로 View를 반환하기 위해 사용된다
+
+- Client가 Request할 때 Dispatcher Servlet의 Handler Mapping을 통해서 위치를 파악하고 해당하는 Controller에 전송을 한다
+- Controller가 작업을 완료한 후에는 ViewResolver를 통해서 해당하는 View에 데이터를 전송하게 된다
+- Controller는 Data를 반환하는 경우도 있다 이때에는 @ResponseBody을 활용을 해야한다 이를 통해 Json 형태로 데이터를 변환할 수 있다
+- Data를 반환하기 위해서는 HttpMessageConverter가 동작을 하게 된다
+   - 여러 Converter가 등록이 되어 있고 반환해야 하는 데이터에 따라서 Converter까 달라진다
+
+### RestController 
+
+Controller에 ResponseBody를 추가한 것이다
+
+- RestController의 주용도는 JSON 형태로 객체 데이터를 반환하는 것이다
+- Client는 URI형식으로 웹 서비스에 요청을 보낸다, Mapping되는 Handler와 그 타입을 찾는 DispatcherServlet이 요청을 인터셉트 하고 RestController는 해당 요청을 처리하고 데이터를 반환
+
+## Component VS Controller VS Service VS Repository
+
+전부 Component를 가능하지만 관점에 대해서 연관성을 더 부여할 수 있고 AOP를 통한 처리가 쉽게 가능하다
+### Component
+ß
+Spring에서 관리하는 객체임을 표시하기 위해 사용되는 기본적인 Annotation
+
+### Controller
+
+Web MVC 코드에서 사용되는 Annotation, @RequestMapping을 해당 Annotation밑에서만 사용이 가능하다
+
+### Repository
+
+@Repository은 플랫폼 별 예외를 잡아서 Sprinbg의 통합 검사되지 않은 예외 중 하나로 다시 던지는 것이다
+
+### Service
+
+비즈니스 로직과 Respository Layer를 호출하는 함수에 사용된다
+
+- 다른 Annotation과 다르게 추가된 기능은 없다
+
