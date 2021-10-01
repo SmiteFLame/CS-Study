@@ -360,7 +360,19 @@ HashTable - Map 인터페이스를 구현한 클래스로 중복허용X, 동기�
 - MVC 패턴에서 Controller에서 이용된다
 - HTTP 프로토콜 서비스를 지원하는 HttpServlet클래스를 상속받는다
 
-- VS JSP: 서블릿은 JAVA 소스코드 한에 HTML 코드가 있다, JSP는 HTML 소스 코드 속에 자바 소스 코드가 들어가는 구조
+### JSP
+
+서블릿은 JAVA 소스코드 한에 HTML 코드가 있다, JSP는 HTML 소스 코드 속에 자바 소스 코드가 들어가는 구조
+
+JSP는 서버 스크립트 기술로 미리 약속된 규정에 따라 간단한 키워드를 조하하여 입력하면, 실행 시점에 각각의 키워드에 매핑되어 있는 어떤 코드로 변환 후에 실행된다
+
+### Servlet VS JSP
+
+Servlet: 자바코드로 구현하고 컴파일 하고 베포해야 한다
+- 사용자의 요청을 받아 분석하고 비즈니스 층과 통신을 처리하고 처리한 결과를 다시 사용자에게 응답하는 컨트롤러 층을 담당
+
+JSP: HTML처럼 태그를 사용하여 자바코드도 사용이 가능하다
+- 장점을 최대한 활용할 수 있도록 프리젠테이션 계층(View)를 담당한다
 
 ### 동작 방식
 
@@ -371,13 +383,25 @@ HashTable - Map 인터페이스를 구현한 클래스로 중복허용X, 동기�
 5. 해당하는 동적페이지를 생성 후 HttpServletResponse 객체에 응답을 보낸다
 6. 응답이 끝나면 HttpServletRequest, HttpServletResponse 객체를 소멸
 
+### web.xml
+
+Web application은 반드시 하나의 web.xml파일을 가지고 잇어야 핟나
+
+- 브라우저가 Java Servlet에 접근하기 위해서 WAS(Tomcat)에 대한 필요한 정보를 알려줘야 하는데 Servlet을 호출할 수 있으며, 이것을 정하는 것이 web.xml이다
+
+1. ServletContext의 초기 변수
+2. Servlet 및 JSP에 대한 정의 및 맵핑
+3. MimeType 매핑
+4. Session의 대한 유효시간
+5. Welcome file list
+
 ### Servlet Continaer
 
 서블릿을 관리해 주는 역할
 
 - 웹 서버와 통신 지원
   - listen, accept등을 API로 제공하여 복잡한 과정을 생략한다
-- 서블릿 생명주기 관리
+- 서블릿 생명주기 관리ß
   - 서블릿의 탄생과 죽음을 관리한다, 클래스를 로딩하고 인스턴스화 한다
 - 멀티 쓰레드 지원 및 관리
   - 쵸엉이 올때마다 새로운 자바 스레드를 생성하고 관리한다
