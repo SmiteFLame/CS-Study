@@ -15,18 +15,19 @@
 3. [데이터베이스](https://github.com/SmiteFLame/CS-Study/blob/master/DB/README.md)
 4. [JAVA](https://github.com/SmiteFLame/CS-Study/blob/master/JAVA/README.md)
 5. [Spring](https://github.com/SmiteFLame/CS-Study/blob/master/Spring/README.md)
-6. [FrontEnd(작성중)](https://github.com/SmiteFLame/CS-Study/blob/master/FrontEnd/README.md)
-7. [Kotlin(작성중)](https://github.com/SmiteFLame/CS-Study/blob/master/Kotlin/README.md)
-8. [인프라(작성중)](https://github.com/SmiteFLame/CS-Study/blob/master/Infra/README.md)
-9. [객체지향(작성중)](https://github.com/SmiteFLame/CS-Study/blob/master/OOP/README.md)
-10. [REST(작성중)](https://github.com/SmiteFLame/CS-Study/blob/master/REST/README.md)
+6. [FrontEnd](https://github.com/SmiteFLame/CS-Study/blob/master/FrontEnd/README.md)
+7. [Kotlin](https://github.com/SmiteFLame/CS-Study/blob/master/Kotlin/README.md)
+8. [인프라](https://github.com/SmiteFLame/CS-Study/blob/master/Infra/README.md)
+9. [객체지향](https://github.com/SmiteFLame/CS-Study/blob/master/OOP/README.md)
+10. [REST](https://github.com/SmiteFLame/CS-Study/blob/master/REST/README.md)
+11. [컨테이너](https://github.com/SmiteFLame/CS-Study/blob/master/Container/README.md)
+12. [자료구조](https://github.com/SmiteFLame/CS-Study/blob/master/DataStructure/README.md)
 
 ## 작성 예정
 
-1. 자료구조
-2. 알고리즘
-3. 그래픽스
-4. 디자인 패턴
-5. 인공지능
-6. C++
-7. 도커, 쿠버네티스
+1. 알고리즘
+2. 그래픽스
+3. 디자인 패턴
+4. 인공지능
+5. C++
+6. 도커, 쿠버네티스
