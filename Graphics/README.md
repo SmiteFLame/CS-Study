@@ -159,3 +159,38 @@ n 차원 어파인 공간에서 어파인 프레임은 다음으로 정이 된�
 3. 원래의 저믕로 이동
 
 - 반드시 3가지 순서대로 진행을 해야 한다
+
+## 관측 파이프 라인
+
+3차원 장면에서 투영된 2차원 좌표를 계산하는 과정
+
+1. MC(Model Coordinate): 모델 좌표계
+2. WC(World Coordinate): 월드 좌표계
+3. VC(View Coordinate): 관측 좌표계
+4. NC(Normalized Coordinate): 정규 좌표계
+5. DC(Device Coordinate): 장치 좌표계
+
+### 모델링 변환
+
+MC에서 WC로 변환
+
+### 관측 변환
+
+VC에서 WC로 변환
+
+M(Modelview) = M(Viewing)M(Modeling)
+
+1. WC에서 표현된 VC의 원점 좌표
+2. WC에서 표현된 VC가 바라보는 참조점
+3. WC에서 표현된 VC의 상향(y축) 벡터
+
+### 투영 변환
+
+3차원 장면에서 2차원 이미지 생성하는 변환
+
+1. 평행(Parallel)/직교(Orthogonal) 투영
+   - 투영선이 관측 평면에 직교
+   - VC에서 3D 직육면체 형태의 관측 공간을 정의
+   - 정의된 관측 공간은 정규화 관측 공간으로 변환 됨
+2. 원근(Perspective) 투영
+   - 잘려진 피라미트 모양으로 거리에 따라 축소되는 비율이 다르다
