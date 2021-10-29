@@ -22,7 +22,7 @@
 - [REST](https://github.com/SmiteFLame/CS-Study/blob/master/REST/README.md)
 - [컨테이너](https://github.com/SmiteFLame/CS-Study/blob/master/Container/README.md)
 - [자료구조](https://github.com/SmiteFLame/CS-Study/blob/master/DataStructure/README.md)
-- [자료구조](https://github.com/SmiteFLame/CS-Study/blob/master/Graphics/README.md)
+- [그래픽스](https://github.com/SmiteFLame/CS-Study/blob/master/Graphics/README.md)
 
 ## 작성 예정
 
