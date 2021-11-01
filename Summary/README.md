@@ -242,6 +242,31 @@ Critical Section의 3가지 조건
 - 서로 연관된 프로세스들이 엉켜서 DeadLock이 생길 수 있다.
 
 2. Mutex(Binary Semaphore) - Lock과 유사하지만, 무한 루프를 돌지 않고 기다리며 Context Switching을 실행한다.
+
+- 오직 1개의 Task만 접근 할 수 있다
+
 3. Count Semaphore - 정수값을 가지는 변수로 볼 수 있으며, 최대 접근 가능한 허용치를 준다.
 
+- 세마포어의 변수만큼 Task에 접근 할 수 있다.
+
 - 현재 수행중이 아닌 다른 프로세스가 Semaphore를 해제할 수 있다.
+
+### DeadLock
+
+둘 이상의 프로세스가 Critical Section 집입을 무한정 기다리고 Critical Section에 실행되는 프로세스는 진입 대기중인 프로세스가 실행되어야만 빠져 나올 수 있는 상태
+
+교착 상태 조건
+
+1. 상호 배제(Mutual Exclusion): 한 리소스는 한 번에 한 프로세스만을 사용할 수 있다.
+2. 점유 대기(Hold and Wait): 어떤 프로세스가 하나 이상의 리소스를 점유하고 있으면 다른 프로세스가 가지고 있는 리소스를 기다리고 있음
+3. 비선점(No Preemption): 프로세스가 Task를 마친 후 리소스를 자발적으로 반환 할대 까지 기다림
+4. 환형 대기(Circular Wait): Hold and Wait 관계의 프로세스들이 서로 기다림
+
+교창 상태 방지법
+
+1. 방지(Prevention): 교착 상태가 발생할 수 있는 요구 조건을 만족시키지 않도록 한다.
+2. 회피(Avoidance): 교착 상태가 발생할 가능성이 있는 자원 할당을 하지 않는다.
+
+- 은행원 알고리즘, 자원 할당 알고리즘
+
+3. 탐지 및 회복(Detection and Recovery): 교착 상태가 발생 할 수 있도록 놔 두고 교착 상태가 발생할 경우 찾아내어 고친다.
