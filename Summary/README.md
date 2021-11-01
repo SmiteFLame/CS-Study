@@ -218,3 +218,30 @@
 - 장기(Job): 저장되어 있는 프로세스 중에서 어떤 프로세스를 Ready Queue로 보낼지
 - 단기(CPU): Ready Queue에서 어떤 프로세스를 Running 할지
 - 중기(Swapper): 여유 공간을 위해서 어떤 프로세스를 메모리에서 디스크로 보낼지
+
+## 동기 VS 비동기
+
+- 동기: 메소드 실행함으로써 반환값을 기대한다.
+  - 반환 되기 전까지는 blocking 된다.
+- 비동기: 메소드를 실행함으로써 반환값을 기대하지 않는다.
+
+### Critical Section
+
+멀티 Task 환경에서 하나의 Task가 자신의 Critical Section에서 수행을 하고 있으면 다른 Task는 그 Critical Section에 접근 할 수 없다
+
+Critical Section의 3가지 조건
+
+1. Mutual Exclusion(상호 배제) - Critical Section에 실행되고 있으면 다른 Task는 들어갈 수 없다.
+2. Process(진행)- Critical Section에 진행되고 있는 Task가 없으면 Task가 들어갈 수 있다.
+3. Bounded Waiting(한정된 대기) Critical Section 진입 횟수에 한계가 있어 계속 독점에서 사용할 수 없다.
+
+해결 방법
+
+1. Lock - Critical Section에 접근하면 Lock을 획득하고 Critical에 나오면 Lock을 방출 한다.
+
+- 서로 연관된 프로세스들이 엉켜서 DeadLock이 생길 수 있다.
+
+2. Mutex(Binary Semaphore) - Lock과 유사하지만, 무한 루프를 돌지 않고 기다리며 Context Switching을 실행한다.
+3. Count Semaphore - 정수값을 가지는 변수로 볼 수 있으며, 최대 접근 가능한 허용치를 준다.
+
+- 현재 수행중이 아닌 다른 프로세스가 Semaphore를 해제할 수 있다.
