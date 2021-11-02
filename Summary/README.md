@@ -366,3 +366,23 @@ Model-View-Controller으로 구성이 되어 있는 있다.
 
 - 장점: 도메인을 작은 역할 단위로 분리하여 설계하는 작업으로 분리되어 각자의 역할에 집중할 수 있다.
 - 단점: Model과 View의 완벽한 분리가 힘들다
+
+### Spring 동작 순서
+
+1. Client는 URL을 통해 Request한다.
+2. DispatcherServlet는 HandlerMapping을 통해 Request가 어느 Controller에게 온 요청인지 찾는다.
+3. DispatcherServlet는 HandlerAdapter를 통해 Request를 전달을 맡긴다.
+4. HandlerAdapter는 해당 Controller에게 Request를 전달한다.
+5. Controller는 로직을 처리한후 반환할 View의 이름을 반환한다.
+6. DispatcherServlet는 ViewResolover를 통해 반환할 View를 찾는다.
+7. DispatcherServlet는 Controller에서 View에 전달할 데이터를 추가한다.
+8. 데이터가 추가된 View를 반환한다.
+
+### Annotation
+
+- Component: Spring에서 관리하는 객체임을 표시하는 기본적인 Annotation
+- Service: 서비스 레이어로 주로 내부의 자바 로직을 처리한다.
+- Repository: DB나 파일 같은 외부 I/O 작업을 처리한다
+- Controller: View에 주로 반환하기 위해서 사용한다.
+  - 데이터를 반환하는 경우 ResponseBody를 사용한다.
+- RestController: Controller에 ResponseBody를 추가하여 JSON 형태의 객체를 반환하기 위해 사용한다.
