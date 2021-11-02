@@ -56,6 +56,7 @@ Servlet을 실행하고 관리하는 역할을 한다
 
 Java 코딩시 New 연산자, 인터페이스 호출, 데이터 클래스 호출하는 것을 개발자가 아닌 스프링이 대신 관리한다.<br>
 즉, 객체의 생명 주기 관리를 개발자가 아닌 스피링이 한다.
+
 - 객체의 생성 ~ 생명 주기를 컨테이너가 도 맞아서 하는 것이다
 - 제어권이 컨테이너로 넘어감으로써 DI와 AOP등이 가능한 것이다
 
@@ -121,24 +122,25 @@ MVC는 Model-View-Controller으로 구성이 되어 있다
 - 즉, 기존에 Spring보다 더 깔끔하고 간편하게 개발 가능
 
 - Model: '데이터' 디자인을 담당한다
-   - 데이터들의 정의 로써, DTO, DAO와 같은 아이들이다
-   - 최대한 구체적이고 작은 Entity를 유지하면서 Model을 설계하는 것이 중요하다
+  - 데이터들의 정의 로써, DTO, DAO와 같은 아이들이다
+  - 최대한 구체적이고 작은 Entity를 유지하면서 Model을 설계하는 것이 중요하다
 - View: 실제로 랜더링되어 보이는 페이지
-   - Client가 보이는 화면으로 HTML같은 파일들이다
-   - 도메인 모델의 상태를 변환하거나 받아서 렌더링 역할을 한다
-   - 오직 객체를 전달받아서 출력하는 역할을 한다
+  - Client가 보이는 화면으로 HTML같은 파일들이다
+  - 도메인 모델의 상태를 변환하거나 받아서 렌더링 역할을 한다
+  - 오직 객체를 전달받아서 출력하는 역할을 한다
 - Controller: 사용자의 요청을 받고, 응답을 주는 로직을 담당한다
-   - Model과 View를 연결해주면서 동작 순서나 방식을 제어한다
-   - 웹 프로그래밍에서는 Controller에서 Service Layer를 분리하여 Domain 로직이 수행되는 곳과 view 요청을 매핑하는 곳을 독립적으로 관리
+
+  - Model과 View를 연결해주면서 동작 순서나 방식을 제어한다
+  - 웹 프로그래밍에서는 Controller에서 Service Layer를 분리하여 Domain 로직이 수행되는 곳과 view 요청을 매핑하는 곳을 독립적으로 관리
 
 - 장점
-   - 도메인을 작은 역할 단위로 분리하여 설계하는 작업으로 분리 된다
-   - 각자의 역할에 집중할 수 있도록 개발할 수 있다
-   - 유지 보수성, 애플리케이션 확장성, 유연성, 중복코딩 문젬 제거
+  - 도메인을 작은 역할 단위로 분리하여 설계하는 작업으로 분리 된다
+  - 각자의 역할에 집중할 수 있도록 개발할 수 있다
+  - 유지 보수성, 애플리케이션 확장성, 유연성, 중복코딩 문젬 제거
 - 단점
-   - 설계 시간이 오래 걸리고 model과 view의 완벽한 분리가 힘들다
-   - 한 Model은 다수의 View를 가질 수 있고 Controller를 통해서 한 View에 연결되는 Model이 여러개가 될 수 있다
-   - Controller는 View와 라이프 사이클이 강하게 연결되어 있어 분리하기 어렵다
+  - 설계 시간이 오래 걸리고 model과 view의 완벽한 분리가 힘들다
+  - 한 Model은 다수의 View를 가질 수 있고 Controller를 통해서 한 View에 연결되는 Model이 여러개가 될 수 있다
+  - Controller는 View와 라이프 사이클이 강하게 연결되어 있어 분리하기 어렵다
 
 ### Spring MVC 구성 요소
 
@@ -211,25 +213,24 @@ JPA는 단순히 명세이기 떄문에 구현이 없다. 대부분 Interface, E
 - @EnableJpaRepositories: JpaRepository에 대한 설정 정보를 자동적으로 로딩하고 Repository 빈을 등록하는 역할을 한다
 
 - Entity: JPA가 관리하는 클래스로, 해당 클래스를 Entity라고 부른다
-   - 테이블에 대응하는 하나의 클래스
-   - JPA를 사용하여 테이블과 매핑해야할 클래스는 반드시 @Entity를 선언해야 한다
+  - 테이블에 대응하는 하나의 클래스
+  - JPA를 사용하여 테이블과 매핑해야할 클래스는 반드시 @Entity를 선언해야 한다
 - 특징
-   - public, protected이여야 한다
-   - JPA 스팩으로 규정되어 있다
+  - public, protected이여야 한다
+  - JPA 스팩으로 규정되어 있다
 
 ### 동작원리
 
 - JPA에서 알아서 쿼리문으로 변환해 JDBC로 전달한 다음, JDBC는 해당 쿼리문을 DB에 전송해 결과값을 가지고 온다
 
 - DataSource를 통해서 연결한다
-   - DB Server와 기본적인 연결을 한다
-   - DB Connection Pooling 기능을 사용한다
-   - 트랜잭션 처리를 한다
+  - DB Server와 기본적인 연결을 한다
+  - DB Connection Pooling 기능을 사용한다
+  - 트랜잭션 처리를 한다
 - DB Server에 관한 정보를 설정
 - property file 위치 저장
 - 반드시 필요한 parameter 속성으로 설정
 - 해당 datasource를 bean으로 등록
-
 
 ## Impl 분리하는 이유
 
@@ -283,9 +284,9 @@ Groovy 언어(JAVA의 스크립트 언어)를 사용한 빌드 관리 도구
 ### 차이점
 
 - Gradle: 작업 의존성 그래프
-   - 어떤 Task가 업데이트 되었고 안되었는지 체크를 하기 때문에 빌드 시간이 단축이 된다
-   - Concurrent에 안전한 캐시를 허용한다: 두 개 이상의 프로젝트가 동일한 캐시를 쓰게 되면 서로 overwrite되지 않도록 서로 동기화 시킨다
-   - Maven에 비해서 친숙하지는 않지만 확장성이 뛰어나다
+  - 어떤 Task가 업데이트 되었고 안되었는지 체크를 하기 때문에 빌드 시간이 단축이 된다
+  - Concurrent에 안전한 캐시를 허용한다: 두 개 이상의 프로젝트가 동일한 캐시를 쓰게 되면 서로 overwrite되지 않도록 서로 동기화 시킨다
+  - Maven에 비해서 친숙하지는 않지만 확장성이 뛰어나다
 - Maven: 고정적이고 선형적인 단계의 모델
 
 ## web.xml
@@ -299,11 +300,11 @@ Spring Boot으로 넘어가게 되면서 web.xml을 다른 기능들이 수행�
 - 서블릿 관련 설정은 내부적으로 자동으로 설정이 된다
 - Session-config는 application.properties으로 설정이 가능하다
 
-## RestController VS Controller vs 
+## RestController VS Controller vs
 
 Http ResponseBody가 생성되는 방식이 다르다
 
-###  Controller
+### Controller
 
 주로 View를 반환하기 위해 사용된다
 
@@ -311,9 +312,9 @@ Http ResponseBody가 생성되는 방식이 다르다
 - Controller가 작업을 완료한 후에는 ViewResolver를 통해서 해당하는 View에 데이터를 전송하게 된다
 - Controller는 Data를 반환하는 경우도 있다 이때에는 @ResponseBody을 활용을 해야한다 이를 통해 Json 형태로 데이터를 변환할 수 있다
 - Data를 반환하기 위해서는 HttpMessageConverter가 동작을 하게 된다
-   - 여러 Converter가 등록이 되어 있고 반환해야 하는 데이터에 따라서 Converter까 달라진다
+  - 여러 Converter가 등록이 되어 있고 반환해야 하는 데이터에 따라서 Converter까 달라진다
 
-### RestController 
+### RestController
 
 Controller에 ResponseBody를 추가한 것이다
 
@@ -323,8 +324,9 @@ Controller에 ResponseBody를 추가한 것이다
 ## Component VS Controller VS Service VS Repository
 
 전부 Component를 가능하지만 관점에 대해서 연관성을 더 부여할 수 있고 AOP를 통한 처리가 쉽게 가능하다
+
 ### Component
-ß
+
 Spring에서 관리하는 객체임을 표시하기 위해 사용되는 기본적인 Annotation
 
 ### Controller
@@ -333,11 +335,10 @@ Web MVC 코드에서 사용되는 Annotation, @RequestMapping을 해당 Annotati
 
 ### Repository
 
-@Repository은 플랫폼 별 예외를 잡아서 Sprinbg의 통합 검사되지 않은 예외 중 하나로 다시 던지는 것이다
+@Repository은 플랫폼 별 예외를 잡아서 Spring의 통합 검사되지 않은 예외 중 하나로 다시 던지는 것이다
 
 ### Service
 
 비즈니스 로직과 Respository Layer를 호출하는 함수에 사용된다
 
 - 다른 Annotation과 다르게 추가된 기능은 없다
-
