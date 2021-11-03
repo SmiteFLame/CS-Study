@@ -457,3 +457,12 @@ Model-View-Controller으로 구성이 되어 있는 있다.
 3. 서버가 응답할 때 응답 해더에 set-cookie: sessionid:"쿠키아이디"를 추가
 4. 클라이언트는 이후 서버에 요청할 때 마다 전달받은 sessionId 쿠기를 자동으로 요청 헤더에 추가
 5. 서버는 요청 헤더에 sessionid값을 저장된 세션 저장소를 찾아보고 유효한지 확인 후 요청을 처리하고 응답
+
+### Web Server
+
+HTTP 프로토콜을 기반으로 하여 클라이언트의 요청을 서비스 하는 기능
+
+- WAS: DB 조회나 로직 처리를 요구하는 동적인 컨텐츠를 제공하기 위해 만들어진 Application Server
+  - WAS = Web Server + Web Container
+  - Web Container: Servlet, JSP를 실행할 수 있는 소프트웨어
+    - Web Server에서 JSP요청하면 Web Container에서는 JSP 파일을 Servlet 파일로 변환 한 뒤 컴파일 하여 실행 결과를 Web Server에 전달
