@@ -466,3 +466,12 @@ HTTP 프로토콜을 기반으로 하여 클라이언트의 요청을 서비스 
   - WAS = Web Server + Web Container
   - Web Container: Servlet, JSP를 실행할 수 있는 소프트웨어
     - Web Server에서 JSP요청하면 Web Container에서는 JSP 파일을 Servlet 파일로 변환 한 뒤 컴파일 하여 실행 결과를 Web Server에 전달
+
+### App Server
+
+실제 구현 비즈니스 로직을 위한 서버
+
+- httpd: HTTP 프로토콜을 지원하는 Daemon
+- Http의 프로토콜을 받아드리고 http요청을 보낼 수 있도록 하는 구현체
+- 즉, Http를 지원하는 서버이며, Web Server를 구축한다는 말은 httpd를 수행하는 말과 같다.
+- EX) Apache Server도 Linus의 기본 httpd이다
