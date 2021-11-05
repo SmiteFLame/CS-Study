@@ -753,3 +753,10 @@ REpresentation State Transfer API(표현 상태 전송 API)
 - 5XX
   - 500(INTERNAL SERVER ERROR): 서버에 문제가 있는 경우
   - 501(NOT IMPLEMENTD): 요청을 이행하는데 필요한 기능 X
+
+# 추가 예정
+
+- JAVA, Kotlin
+- 소켓 통신
+- 자료구조(Array vs List)
+- Docker
