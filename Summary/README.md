@@ -730,3 +730,9 @@ REpresentation State Transfer API(표현 상태 전송 API)
 - 각각의 역할이 확실히 구분되기 때문에 클라이언트와 서버에서 개발해야 할 내용이 명확해지고 서로간 의존성이 줄어든다.
 
 6. 계층형 구조: 보안, 로드밸런싱, 암호화 계층을 추가해서 유연성 추가 가능하다
+
+### HTTP VS REST
+
+- HTTP: Stateless한 성격을 가진 '프로토콜', HTTP를 사용해서 정해둔 스펙으로 데이터를 주고 받으며 통신하는 것
+- REST: Stateless한 성격을 가진 '설계구조'
+- REST는 HTTP의 하나의 방법이다.
