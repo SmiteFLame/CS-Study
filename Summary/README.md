@@ -736,3 +736,20 @@ REpresentation State Transfer API(표현 상태 전송 API)
 - HTTP: Stateless한 성격을 가진 '프로토콜', HTTP를 사용해서 정해둔 스펙으로 데이터를 주고 받으며 통신하는 것
 - REST: Stateless한 성격을 가진 '설계구조'
 - REST는 HTTP의 하나의 방법이다.
+
+### HTTP 응답 코드
+
+- 2XX
+  - 200(OK): 정상적으로 수행
+  - 201(CREATED): 성공적으로 생성
+- 3XX
+  - 300(MULTIPLE CHOICE): 응답이 하나 이상 존재하여 사용자가 선택
+  - 301(MOVED PERMANETLY): 리소스의 URI가 변경
+- 4XX
+  - 400(BAD REQUEST): 요청이 부적절
+  - 401(UNAUTHORIZED): 인증이 되지 않음
+  - 403(FORBIDDEN): 유저 인증 상태와 상관 없이 응답 하고 싶지 않을 때
+  - 404(NOT FOUND): 사용 불가능한 Method
+- 5XX
+  - 500(INTERNAL SERVER ERROR): 서버에 문제가 있는 경우
+  - 501(NOT IMPLEMENTD): 요청을 이행하는데 필요한 기능 X
