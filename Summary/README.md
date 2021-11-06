@@ -40,6 +40,10 @@
 메모리 관리 - GC을 수행하는 스택 기반의 가상머신
 클래스 로더 - 클래스를 처음 참조할 때 해당 클래스를 로드하고 링크
 
+### Garbage Collection
+
+더이상 유효하지 않는 메모리를 Garbage Collection이 알아서 정리를 해주게 된다.
+
 ## 객체지향
 
 ### OOP의 5원칙
@@ -756,7 +760,10 @@ REpresentation State Transfer API(표현 상태 전송 API)
 
 # 추가 예정
 
-- JAVA, Kotlin
 - 소켓 통신
 - 자료구조(Array vs List)
 - Docker
+- Spring Batch
+- Kafka
+- Redis
+- hadoop
