@@ -763,7 +763,6 @@ REpresentation State Transfer API(표현 상태 전송 API)
 - 소켓 통신
 - 자료구조(Array vs List)
 - Docker
-- Spring Batch
 - Kafka
 - Redis
 - hadoop
