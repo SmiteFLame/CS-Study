@@ -268,6 +268,22 @@ Major GC
 2. 객체가 필요 없는 시점을 알고 있는 경우에도 GC 알고리즘이 메모리 해제 비용 추적해야됨
 3. 실시간 서비스에는 적합하지 않다(GC행동 타이밍, 점유시간 예측 불가능)
 
+### GC 알고리즘
+
+1. Default GC
+
+- Minor GC는 Copy & Scavenge, Full GC는 Mark & Compact 알고리즘 사용
+- 위에서 설명했던 방식
+
+2. Parallel GC
+
+- 스레드 수를 지정하고여러 스레드들 동시에 이용해 GC를 수행하는 방법
+
+1. Low - pause: GC 속도보다 순간적으로 애플리케이션 동작이 중단되는 형상을 최소화
+2. Throughput: Minor GC의 신속한 수행에 초점을 맞춘 방식
+3. Concurrent GC: Low-pause와 비슷한 방식으로 애플리케이션이 돌아가는 단게에서 GC 수행
+4. Incremental GC(Train GC): Minor GC 일어날 때마다 Old GC 영역의 GC를 조금씩 수행해 Full GC의 발생 횟수를 감소
+
 <hr>
 
 ## 추상클래스 VS 인터페이스
