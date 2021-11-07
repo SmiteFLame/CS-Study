@@ -55,6 +55,7 @@ Representational State Transfer API(표현 상태 전송 API)<br>
 - HTTP 프로토콜 표준에서 사용하는 Last-Midified태그나 E-Tag를 이용하면 캐싱 구현 가능
 
 - PUT, DELETE에는 사용이 불가능하며 주로 GET에 일반적으로 사용한다
+
   - POST는 일반적으로 불가능 하지만 리소스의 만료시간(Expires), 리소스가 생성된 시간부터 상대적 시간(Cache-Control)을 통해서 사용가능하다
 
 - E-Tag: 리소스를 특정 문자열로 변경한 값이다
@@ -137,6 +138,7 @@ GET /users/{userid}/devices
 ```
 
 관계 명이 복잡하다면 이를 서브 리소스에 명시적으로 표현할 수 있다
+
 ```
 / 사용자가 가지고 있는 디바이스 (기본형)
 GET /users/{userid}/devices
@@ -206,7 +208,7 @@ URL 매개변수는 REST를 통해서 필터링 하는 방법은 가장 쉬운 �
 
 ## Pagination
 
-- ```GET /items?limit=n&offset=ㅡ```
+- `GET /items?limit=n&offset=ㅡ`
 - n개의 개수 제한으로 m번째 데이터부터 데이터를 확인할 수 있다
 
 - 구현이 용이하며, 파리미터를 SQL 쿼리에 직접 전달하는 것 외에는 거의 코딩이 필요하지 않다
@@ -234,5 +236,17 @@ RESPONSE
   }
 }
 ```
+
 - 위 REQUEST를 보내게 된다면 일반적인 Reponse가 Content에 출력이 된다
 - 또한, 아래와 같이 self에 선택사항을 추가로 보내줄 수 있다
+
+## GET의 Body가 없는 이유
+
+- GET을 통해서 Body를 보내도 되지만 크게 사용하지 않는다.
+- 요청 본체가 GET 요청에 자원 식별의 일부가 아니며 요청 URI만 해당됨을 명시한다.
+- 전통적으로 사용하는 것, 만약 Body를 넣어야할 필요가 있으면 넣어도 된다.
+
+## PUT VS PATCH
+
+- PUT: 자원의 전체 교체, 자원 교체 시 모든 필드 필요
+- PATCH: 자원의 부분 교체, 자원 교체시 일부 필드 필요
