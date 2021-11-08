@@ -537,3 +537,19 @@ Multi-Thread 환경에서 동기화를 제어해야 되는 경우 Synchronized�
 
 1. Method에 사용하는 방법
 2. 블록에 사용하는 방법
+
+## Mutable VS Immutable
+
+- Mutable: 인스턴스가 생성된 후에 값의 내용이 변할 수 있는 클래스, 주소는 바꾸지 못한다.
+  - String을 제외한 참조 타입 변수
+- Immutable: 인스턴스가 일단 생성된 후에는 인스턴스의 내용이 절대변하지 않는 특징을 가진 클래스
+
+  - Int등의 기본 타입들 and String
+
+- String 같은 경우는 컴파일 시점에서 자동으로 StringBuffer가 실행이 된다.
+- StringBuilder는 Mutable하다
+
+- String 같은 경우는 concat(추가) 할때 마다 new String을 통해서 변경이 된다.
+  - new String을 할 때 마다 해시코드 값이 설정이 된다.
+- StringBuilder 같은 경우는 append(추가) 할때 마다 바로 이어 붙혀주게 된다.
+  - 해시코드 값은 변하지 않고 데이터가 변경되게 된다.
