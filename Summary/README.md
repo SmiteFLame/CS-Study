@@ -417,6 +417,10 @@ Model-View-Controller으로 구성이 되어 있는 있다.
   - 데이터를 반환하는 경우 ResponseBody를 사용한다.
 - RestController: Controller에 ResponseBody를 추가하여 JSON 형태의 객체를 반환하기 위해 사용한다.
 
+### JWT
+
+Json 포맷을 이용하여 사용자에 대한 속성을 저장하는 Web Token
+
 ## Infra
 
 ### 3계층형 아키텍처
