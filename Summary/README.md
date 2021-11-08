@@ -774,11 +774,22 @@ REpresentation State Transfer API(표현 상태 전송 API)
   - 500(INTERNAL SERVER ERROR): 서버에 문제가 있는 경우
   - 501(NOT IMPLEMENTD): 요청을 이행하는데 필요한 기능 X
 
+## Kafka
+
+LinkedIn에서 개발한 분산 메시징 시스템으로 대용량 실시간 로그처리에 특화된 아키텍처 설계를 통하여 기존 메시징 시스템보다 우수한 TPS를 보여준다.
+
+- 분산 스트리밍 플랫폼
+- 데이터 파이프 라인 구성시, 주로 사용되는 오픈소스 솔루션
+- 대용량의 실시간 로그처리에 특화되어 있는 솔류션
+- 데이터 유실없이 안적하게 전달하는 것이 주목적인 메시지 시스템
+- 클러스티링이 가능하므로, Fault-Tolerant한 안정적인 아키텍처와 빠른 퍼포먼스로 데이터처리
+- 수평적으로 서버의 Scale-Out이 가능함
+- pub-sub 모델의 메시지 큐
+
 # 추가 예정
 
 - 소켓 통신
 - 자료구조(Array vs List)
 - Docker
-- Kafka
 - Redis
 - hadoop
