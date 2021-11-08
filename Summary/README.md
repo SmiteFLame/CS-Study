@@ -310,6 +310,11 @@ Critical Section의 3가지 조건
 - 매우 빠른 엑세스, 지역 변수만 되지만 크기 조정이 불가능하다.
 - 공간은 CPU에서 관리하여 매우 효율적이다.
 
+스택 VS 힙
+
+- 힙: 낮->높, 전역변수, 느림, 직접 선언, resize 가능, 동적 메모리, GC에 의해 반환
+- 스택: 높->낮, 지역변수, 빠름, 함수 호출, resize 불가능, 정적 메모리, 함수가 끝나면 반환
+
 ### 단편화
 
 프로세스들 메모리 적재되고 제거 되면서 프로세스들이 차지하는 메모리 틈 사이에 사용하지 못할 만큼의 자유 공간들이 늘어나게 되는 형상
@@ -783,6 +788,15 @@ REpresentation State Transfer API(표현 상태 전송 API)
 - 5XX
   - 500(INTERNAL SERVER ERROR): 서버에 문제가 있는 경우
   - 501(NOT IMPLEMENTD): 요청을 이행하는데 필요한 기능 X
+
+### URI VS URL
+
+- URI: 네트워크 상에서 자원 위치를 알려주기 위한 규약
+- URL: 통합 자원 식별자로 인터넷에 있는 자원을 나타내는 유일한 주소
+- URI가 URL보다 상위 개념
+- http://example.com이면 URI이자 URI가 된다
+- http://example.com/skin 이면 자원의 위치를 의미하기 때문에 둘다 된다.
+- http://example.com/123 이면 123이라는 식별자가 추가로 주어지므로 URI이지만 URL은 아니다
 
 ## Kafka
 
