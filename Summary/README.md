@@ -732,10 +732,21 @@ UDP: 비 연결형 서비스
 
 ### 소켓 프로그래밍
 
+클라이언트
+
 1. CREATE: 소캣을 생성
 2. CONNECT: 서버 측에 연결
 3. SEND/RECV: 송 / 수신 반복
 4. CLOSE: 소켓 닫음
+
+서버
+
+1. CREATE: 최초의 소캣 생성
+2. BIND: 소캣과 포트번호를 합친다.
+3. LISTEN: 클라이언트 요청 대기
+4. ACCEPT: 클라이언트 요청 수립
+5. SEND/RECV: 데이터 송 수신
+6. CLOSE: 소켓 닫음
 
 ## REST
 
