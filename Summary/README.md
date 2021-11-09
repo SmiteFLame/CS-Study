@@ -730,6 +730,13 @@ UDP: 비 연결형 서비스
 - 전송 순서 보장 X, N:N 통신
 - 데이터 그램 방식
 
+### 소켓 프로그래밍
+
+1. CREATE: 소캣을 생성
+2. CONNECT: 서버 측에 연결
+3. SEND/RECV: 송 / 수신 반복
+4. CLOSE: 소켓 닫음
+
 ## REST
 
 REpresentation State Transfer API(표현 상태 전송 API)
