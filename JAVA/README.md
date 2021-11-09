@@ -553,3 +553,16 @@ Multi-Thread 환경에서 동기화를 제어해야 되는 경우 Synchronized�
   - new String을 할 때 마다 해시코드 값이 설정이 된다.
 - StringBuilder 같은 경우는 append(추가) 할때 마다 바로 이어 붙혀주게 된다.
   - 해시코드 값은 변하지 않고 데이터가 변경되게 된다.
+
+## Parameter VS Argument
+
+```JAVA
+public void cancat(str1, str2){
+  return a + " " + b
+}
+
+str.concat("A", "B");
+```
+
+- Parameter: concat 입장에서 str1, str2를 의미한다.
+- Argument: str입장에서 "A", "B"를 의미한다.
