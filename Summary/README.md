@@ -44,6 +44,12 @@
 
 더이상 유효하지 않는 메모리를 Garbage Collection이 알아서 정리를 해주게 된다.
 
+### JDBC 동작 원리
+
+1. DriverManager를 통해서 Connection 인스턴스를 얻는다
+2. Connection을 통해서 Statement를 얻는다
+3. Statement를 이용해서 ResultSet을 얻는다
+
 ## 객체지향
 
 ### OOP의 5원칙
