@@ -16,8 +16,8 @@
 
 현재 위치에 들어갈 값을 찾아 정렬하는 배열
 
-- 시간 복잡도: O(n ^ 2)
-- 공간 복잡도: O(n)
+- 시간 복잡도: O(N ^ 2)
+- 공간 복잡도: O(N)
 
 ```JAVA
 
@@ -39,9 +39,9 @@ void Selection(int[] data){
 
 현재 위치에서 배열들을 비교하여 자신이 들어갈 위치를 찾아 위치에 삽입하는 배열 알고리즘
 
-- 시간 복잡도: O(n ^ 2)
-  - 최소: O(n) (이미 정렬된 경우)
-- 공간 복잡도: O(n)
+- 시간 복잡도: O(N ^ 2)
+  - 최소: O(N) (이미 정렬된 경우)
+- 공간 복잡도: O(N)
 
 ```JAVA
 
@@ -63,8 +63,8 @@ void Insertion(int[] data){
 
 매번 연속된 두 개 인덱스를 비교하여, 정한 기준의 값을 뒤로 넘겨 정렬하는 방법
 
-- 시간 복잡도: O(n ^ 2)
-- 공간 복잡도: O(n)
+- 시간 복잡도: O(N ^ 2)
+- 공간 복잡도: O(N)
 
 ```JAVA
 
@@ -75,6 +75,49 @@ void Bubble(int[] data){
                 swap(data[j - 1], data[j])
             }
         }
+    }
+}
+
+```
+
+### 합병 정렬
+
+분할 정복 방식으로 연산 중에서 두 개의 배열을 계속 쪼개 나간후 합쳐가면서 하나의 정렬을 출력
+
+- 시간 복잡도: O(NLogN)
+- 공간 복잡도: O(2N)
+
+```JAVA
+
+MergeSort(0, data.length - 1);
+
+void MergeSort(int start, int end){
+    if(start < end){
+        int mid = (start + end) / 2;
+        MergeSort(start, mid);
+        MergeSort(mid + 1, end);
+        Merge(data, start, end, mid)
+    }
+}
+
+void Merge(int[] data, int start, int end, int mid){
+    ArrayList<Int> temp = new ArrayList<>();
+
+    int i = start;
+    int j = mid + 1,
+    while(i <= mid && j <= end){
+        if(data[i] < data[j]){
+            temp.add(data[i++]);
+        } else{
+            temp.add(data[j++]);
+        }
+    }
+
+    while(i <= mid) temp.add(data[i++]);
+    while(j <= end) temp.add(data[j++]);
+
+    for(int x = start; x <= end; x++){
+        data[x] = temp.get(x - start);
     }
 }
 
