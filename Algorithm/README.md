@@ -122,3 +122,38 @@ void Merge(int[] data, int start, int end, int mid){
 }
 
 ```
+
+### 퀵 정렬
+
+pivot point라고 기준이 되는 값을 하나 설정하고, 그 값을 기준으로 좌우로 값을 옮기는 방식을 통해서 정렬
+
+- 시간 복잡도: O(NlogN)
+  - 최악: O(N ^ 2): (이미 정렬되어 잇는 경우)
+  - 최악인 경우 전체 데이터를 랜덤으로 설정하여 사용하면 평균으로 돌아온다.
+- 공간 복잡도: O(N)
+
+```JAVA
+void Quick(int[] data, int start, int end){
+    int pivot = data[start];
+    int left = start;
+    int right = end;
+    while(left < right){
+        while(pivot <= data[right] && left< right) right--;
+        if(left > right) break;
+        while(pivot <= data[left] && left< right>) left++;
+        if(left > right) break;
+        swap(data[left], data[right]);
+    }
+
+    swap(data[start], data[left]);
+
+    if(start < left){
+        Quick(data, start, left - 1);
+    }
+    if(end > right){
+        Quick(data, left + 1, end);
+    }
+}
+
+
+```
