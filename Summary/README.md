@@ -251,6 +251,11 @@ WAS가 실행되면서 DB와 미리 Connection을 해놓은 객체들을 Pool에
   - 반환 되기 전까지는 blocking 된다.
 - 비동기: 메소드를 실행함으로써 반환값을 기대하지 않는다.
 
+- 블록: 데이터가 리턴되는 것을 기다리는 것
+- 논블록: 데이터가 리턴되는 것을 기다리지 않는 것
+
+- 동기/비동기 + 블록/논블록 조합을 통해서 사용할 수 있다
+
 ### Critical Section
 
 멀티 Task 환경에서 하나의 Task가 자신의 Critical Section에서 수행을 하고 있으면 다른 Task는 그 Critical Section에 접근 할 수 없다
