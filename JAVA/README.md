@@ -564,6 +564,14 @@ Multi-Thread 환경에서 동기화를 제어해야 되는 경우 Synchronized�
 - StringBuffer는 멀티 쓰레드 환경에서 안정성을 가지고 있다
 - StringBuilder는 동기화를 지원하지 않기 때문에 단일 스레드에서 성능이 좋다.
 
+### String Pool
+
+자바에서 String을 관리하기 위해서 String Pool을 통해서 해시코드값드릉ㄹ 저장
+
+- "=="를 통해서 String이 같이 않을 때의 원인이 된다.
+- String이 선언되면 String Pool에 반드시 String literal이 생겨난다. 그리고 같은 값을 찾는 경우가 생가면 다시 반환한다.
+- new 를 통해서 생성되는 경우 새로운 메모리가 Heap에 선언이 되면서 같은 문자열이라도 String Pool에 추가된다.
+
 ### 정리
 
 - String: 문자열 연산이 적고 멀티스레드 환경
