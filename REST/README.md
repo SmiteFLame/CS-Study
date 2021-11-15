@@ -257,3 +257,19 @@ RESPONSE
 - PATCH를 요청하는 경우는 특정 수정 DTO가 입력을 받고 나머지는 null 값이 된다.
 - 데이터를 적용하기 위해서 entity로 변환하는 과정에서 변수가 바뀔 수 있다.
 - 즉, GET을 통해서 정보를 받아오고 PUT으로 정보를 수정함에 있어서 GET에서 받은 부분중 원본 + 수정본을 같이 보냄으로써 코드의 유연함이 있어서 서버에서 관리하지 않을 수 있기에 PATCH 보다는 PUT을 사용한다.
+
+## CORS
+
+Cross-Origin Resource Sharing
+
+- 자기 자신이 속하지 않은 다른 도메인, 다른 프로토콜, 혹은 다른 포트에 있는 리소스를 요청하면 웹 애플리케이션은 cross-origin HTTP 요청을 실행한다.
+
+- 다른 도메인에서 img 파일이나 css 파일을 가져오는 것은 모두 가능하다. 그러나 `<script></script>` 안의 스크립트에서 생겨난 XMLHTTPRequest에서도 Cross-site HTTP Requests 필요성이 생겼다
+
+### Origin
+
+출처(Origin): URL구조에서 살펴본 Protocal, Host, Port를 합친 것을 말한다.
+
+- Protocal: Http, Https의 차이
+- Port: 뒤의 포트 번호
+- Host: 도메인 이름
