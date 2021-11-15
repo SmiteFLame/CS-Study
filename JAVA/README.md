@@ -552,7 +552,23 @@ Multi-Thread 환경에서 동기화를 제어해야 되는 경우 Synchronized�
 - String 같은 경우는 concat(추가) 할때 마다 new String을 통해서 변경이 된다.
   - new String을 할 때 마다 해시코드 값이 설정이 된다.
 - StringBuilder 같은 경우는 append(추가) 할때 마다 바로 이어 붙혀주게 된다.
+
   - 해시코드 값은 변하지 않고 데이터가 변경되게 된다.
+
+- 즉, String은 불변의 속성을 갖는다.
+  - 새로운 데이터를 만들면 데이터는 새로 생성이 되고 기존 문자열은 GC에 들어간다.
+  - 변하지 않는 문자열을 자주 읽어들이는 경우 String을 사용하면 좋다.
+  - 문자열 추가, 수정, 삭제등의 연산이 빈번하게 발생하는 경우 Heap에 많은 Garbage가 생성이 된다
+- StringBuilder, StringBuffer는 가변성을 가지기 때문에 동일 객체 내에 문자열을 변경이 가능하다
+
+- StringBuffer는 멀티 쓰레드 환경에서 안정성을 가지고 있다
+- StringBuilder는 동기화를 지원하지 않기 때문에 단일 스레드에서 성능이 좋다.
+
+### 정리
+
+- String: 문자열 연산이 적고 멀티스레드 환경
+- StringBuffer: 문자열 연산이 적고 멀티스레드 환경
+- StringBuilder: 문자열 연산이 많고 단일스레드 혹은 동기화 고려 X인 경우
 
 ## Parameter VS Argument
 
