@@ -8,7 +8,7 @@
 
 <hr>
 
-## CS 지식 (계속 작성중)
+## CS 지식
 
 - [운영체제](https://github.com/SmiteFLame/CS-Study/blob/master/OS/README.md)
 - [네트워크](https://github.com/SmiteFLame/CS-Study/blob/master/NT/README.md)
@@ -23,11 +23,4 @@
 - [컨테이너](https://github.com/SmiteFLame/CS-Study/blob/master/Container/README.md)
 - [자료구조](https://github.com/SmiteFLame/CS-Study/blob/master/DataStructure/README.md)
 - [그래픽스](https://github.com/SmiteFLame/CS-Study/blob/master/Graphics/README.md)
-
-## 작성 예정
-
-- 알고리즘
-- 디자인 패턴
-- 인공지능
-- C++
-- 도커, 쿠버네티스
+- [알고리즘](https://github.com/SmiteFLame/CS-Study/blob/master/Algorithm/README.md)
