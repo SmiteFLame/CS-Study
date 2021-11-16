@@ -1,7 +1,5 @@
 # 자주 나온 면접 질문 리스트
 
-<hr>
-
 ## 운영체제
 
 1. 프로세스와 스레드의 차이
@@ -9,14 +7,10 @@
 3. 메모리 영역에서 스택과 힙의 차이점
 4. Mutex와 Semaphore의 차이점
 
-<hr>
-
 ## 네트워크
 
 1. OSI 7계층에 대해서 전부 설명
 2. TCP, UDP, IP, Http 프로토콜어느 어느 계층에 속하고 있는지
-
-<hr>
 
 ## 데이터 베이스
 
@@ -26,8 +20,8 @@
 4. Inner Join, Outer Join의 차이점
 5. 인덱스의 장점, 단점
 6. RDBMS vs NoSQL
-
-<hr>
+7. 데이터베이스 락의 종류
+8. 관계형 데이터베이스의 특징
 
 ## 자료구조
 
@@ -35,28 +29,35 @@
 2. 스택, 큐, 트리의 규칙
 3. 트랙이 지켜야 되는 규칙
 4. LinkedList가 있는 데 Stack이랑 Queue가 존재하는 이유
-
-<hr>
+5. HashMap VS TreeMap VS LinkedHashMap의 차이
 
 ## 자바
 
-1. 자바 언어의 장점은 무엇인가
-2. 자바 언어의 특징은 무엇인가
-3. JDBC는 무엇인가
-
-<hr>
+1. 자바 언어의 장점
+2. 자바 언어의 특징
+3. JDBC
+4. String VS StringBuilder VS StringBuffer
+5. JVM의 구성요소
+6. GC의 동작 원리
+7. 제너릭
 
 ## Spring
 
 1. Spring의 장점(IOC, DI, AOP)
 2. Servlet-Context의 기능
 3. Spring과 Spring Boot의 차이점
-4. Spring Boot의 서버는 어떤 서버로 구성이 되어 있는지
-5. Controller는 무엇인가
-6. Https의 동작 순서
+4. Spring Boot의 서버 구성
+5. Controller
+6. Annotation 별로 동작 원리
 7. Spring의 동작 순서
+8. JPA의 특징
 
-<hr>
+## REST
+
+1. RESTful은 무엇인가
+2. Https의 동작 순서
+3. Stateless하면 이점은 무엇인가
+4. PUT과 PATCH의 차이점은 무엇인가
 
 ## 인성질문
 
@@ -69,8 +70,6 @@
 7. 버그가 생겼을 때 어떻게 해결하는 가
 8. 실패한 경험을 어떻게 극복 하였는가
 9. 리더십을 많이 가지고 있는 이유
-
-<hr>
 
 ## 프로젝트 관련 질문
 
