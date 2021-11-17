@@ -521,10 +521,14 @@ INNER JOIN은 공통 컬럼명 기반으로 결과 집합을 생성했지만, �
 1. LEFT OUTER JOIN(왼쪽 외부 조인): 테이블 A의 모든 데이터와 테이블 B에 매칭되는 레코드를 포함하는 조인
 
 - A는 모든 결과가 나오지만 매칭이 되지 않는 B는 나오지 않는다.
+- A.id = b.id(+)
+- A LEFT OUTER JOIN b ON a.id = b.id
 
 2. RIGHT OUTER JOIN(오른쪽 외부 조인): 테이블 B의 모든 데이터와 테이블 A에 매칭되는 레코드를 포함하는 조인
 
 - B는 모든 결과가 나오지만 매칭이 되지 않는 A는 나오지 않는다.
+- A.id(+) = b.id
+- A RIGHT OUTER JOIN b ON a.id = b.id
 
 3. FULL OUTER JOIN(완전 외부 조인): MySQL에서는 명시적인 SQL 구문을 지원하지 않지만, UNION을 사용해서 완전외부 조인을 할 수 있다.
 
