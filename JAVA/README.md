@@ -150,14 +150,6 @@ Box<Integer> box2 = new Util.boxing("암묵적호출");
 Boxing - 기본타입을 Wrapper Class로 변경
 Unboxing - Wrapper Class를 기본 타입으로 변경
 
-### static
-
-정적이라는 의미를 가지고 있다.
-
-- Static 키워드를 통해 생성된 정적 멤버들은 Heap이 아니라 Static 영역에 할당을 하게 된다.
-- Static 영역에 할당된 메모리는 모든 객체가 공유하니 어디에서든지 참조할 수 있다.
-- Static 영역에 존재하기 때문에 프로그램 종료시 가지 메모리가 할당된 채로 존재하게 된다.
-
 ### 자바 클래스 멤버 변수 초기화 순서
 
 1. Static 변수 선언부 - 클래스가 로드 될 때 변수가 가장 먼저 초기화
@@ -544,6 +536,14 @@ Multi-Thread 환경에서 동기화를 제어해야 되는 경우 Synchronized�
 1. Method에 사용하는 방법
 2. 블록에 사용하는 방법
 
+### Static
+
+정적이라는 의미를 가지고 있다.
+
+- Static 키워드를 통해 생성된 정적 멤버들은 Heap이 아니라 Static 영역에 할당을 하게 된다.
+- Static 영역에 할당된 메모리는 모든 객체가 공유하니 어디에서든지 참조할 수 있다.
+- Static 영역에 존재하기 때문에 프로그램 종료시 가지 메모리가 할당된 채로 존재하게 된다.
+
 ## Mutable VS Immutable
 
 - Mutable: 인스턴스가 생성된 후에 값의 내용이 변할 수 있는 클래스, 주소는 바꾸지 못한다.
@@ -581,7 +581,7 @@ Multi-Thread 환경에서 동기화를 제어해야 되는 경우 Synchronized�
 ### 정리
 
 - String: 문자열 연산이 적고 멀티스레드 환경
-- StringBuffer: 문자열 연산이 적고 멀티스레드 환경
+- StringBuffer: 문자열 연산이 많고 멀티스레드 환경
 - StringBuilder: 문자열 연산이 많고 단일스레드 혹은 동기화 고려 X인 경우
 
 ## Parameter VS Argument
