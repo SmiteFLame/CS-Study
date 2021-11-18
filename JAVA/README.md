@@ -596,3 +596,23 @@ str.concat("A", "B");
 
 - Parameter: concat 입장에서 str1, str2를 의미한다.
 - Argument: str입장에서 "A", "B"를 의미한다.
+
+## Checked Exception VS Unchecked Exception
+
+Exception: 프로그램 중에 개발자의 실수로 예끼치 않은 상황이 발생했을 때
+
+### Checked Exception
+
+RuntimeException의 하위 클래스가 아닌 Exception의 하위 클래스
+
+- Checked Exception은 반드시 에러 처리 해야하는 특징이 있다.
+- 컴파일 단계에서 확인한다.
+- 예외 발생하면 트랜잭션을 Rollback하지 않는다.
+
+### Unchecked Exception
+
+RuntimeException의 하위 클래스들을 의미한다
+
+- 말 그대로 실행중에 발생할 수 있는 예외를 의미한다.
+- 실행 단계에서 확인한다.
+- 예외 발생하면 트랜잭션을 Rollback 한다.
