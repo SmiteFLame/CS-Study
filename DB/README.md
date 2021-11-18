@@ -619,6 +619,11 @@ INNER JOIN은 공통 컬럼명 기반으로 결과 집합을 생성했지만, �
 - NULL + 다른 값 = NULL으로 출력이 된다
 - 에러: `SELECT C1, C2 FROM T1 GROUP BY C1`
   - C1을 Group으로 묶었으나 C2를 그냥 출력했다(MIN/SUM/MAX/COUNT/AVG등 값으로 출력해야 한다)
+- GROUP BY 한 후 SUM 값을 구하면, 고객 번호가 같은 집합 내에서 주문일자 순으로 누적 합을 출력한다.
+- `SELECT A.C1, B.C2 FROM T1 A JOIN T2 B ON(A.C1 = B.C1)` 은 가능
+- `SELECT A.C1, B.C2 FROM T1 A JOIN T2 B USING(C1)` 은 가능
+  - USING을 쓰게 되면 공동으로 사용하게 되서 A.C1에서 오류가 발생한다.
+  - `SELECT C1, B.C2 FROM T1 A JOIN T2 B USING(C1)` 으로 사용
 
 ### 집합 연산자
 
