@@ -571,32 +571,32 @@ INNER JOIN은 공통 컬럼명 기반으로 결과 집합을 생성했지만, �
 - 개체간의 관계의 제약조건을 나타낸다
 - 데이터베이스의 접근 권한/보안/무결성 규칙에 대한 명세를 정의한다.
 
-## Query
+## SQL
 
-### NVL
+### 구조
+
+- 테이블: 데이터를 저장하는 객체로서, 데이터 모델의 상의 엔터티를 관계형 데이터베이스에서 물리적으로 구현한 것이다.
+- 칼럼: 테이블의 세로 구조, 데이터 모델 상의 속성과 매칭된다.
+- 행: 테이블이 가로구조, 데이터 모델 상의 인스턴스과 매칭된다.
+
+### SQL문의 종류
+
+- DDL: 테이블 인덱스와 같은 데이터베이스 오브젝트의 구조를 정의(생성, 변경, 삭제)하기 위한 구문
+  - CREATE, ALTER, DROP, RENAME, TRUNCATE
+- DML: 테이블에 저장된 데이터 조작(조회, 입력, 수정, 삭제)하기 위한 구문
+  - SELECT, INSERT, UPDATE, DELETE, MERGE
+- DCL: 데이터에 대한 권한을 부여하거나 취소하기 위한 구문
+  - GRANT, REVOKE
+- TCL: DML문에 의한 데이터의 변경 사항을 데이터베이스에 영구히 반영하거나 취소하기 위해 트랜잭션을 제어하는 구문
+  - COMMIT, ROLLBACK, SAVEPOINT
+
+### 추가 명령문
 
 - NVL(속성, 데이터): 속성 값이 null이 아니면 속성 값을 출력하고 null이면 데이터 값을 출력 한다.
 
-### DDL
+### 집합 연산자
 
-테이블 인덱스와 같은 데이터베이스 오브젝트의 구조를 정의(생성, 변경, 삭제)하기 위한 구문
-
-- CREATE, ALTER, DROP, RENAME, TRUNCATE
-
-### DML
-
-테이블에 저장된 데이터 조작(조회, 입력, 수정, 삭제)하기 위한 구문
-
-- SELECT, INSERT, UPDATE, DELETE, MERGE
-
-### DCL
-
-데이터에 대한 권한을 부여하거나 취소하기 위한 구문
-
-- GRANT, REVOKE
-
-### TCL
-
-DML문에 의한 데이터의 변경 사항을 데이터베이스에 영구히 반영하거나 취소하기 위해 트랜잭션을 제어하는 구문
-
-- COMMIT, ROLLBACK, SAVEPOINT
+- UNION 연산(합집합): UNION, UNION ALL
+- INTERSECTION 연산(교집합): INTERSECT
+- DIFFERENCE 연산(차집합): EXCEPT, MINUS
+- PRODUCT 연산(곱집합): CROSS JOIN
