@@ -624,6 +624,10 @@ INNER JOIN은 공통 컬럼명 기반으로 결과 집합을 생성했지만, �
 - `SELECT A.C1, B.C2 FROM T1 A JOIN T2 B USING(C1)` 은 가능
   - USING을 쓰게 되면 공동으로 사용하게 되서 A.C1에서 오류가 발생한다.
   - `SELECT C1, B.C2 FROM T1 A JOIN T2 B USING(C1)` 으로 사용
+- `SELECT * FROM T1 A RIGHT OUTER JOIN T2 B ON A.C1 = B.C1 AND B.C1 >= D`
+  - B를 기준으로 왼쪽에 A의 데이터가 붙게 된다.
+  - 이때, B.C1 >= D인 데이터만 붙게 된다.
+  - B.C1 < D 인 데이터들은 전부 NULL값을 왼쪽에 같는다 -> 단순히 조인에 실패
 
 ### 집합 연산자
 
