@@ -150,7 +150,13 @@ Box<Integer> box2 = new Util.boxing("암묵적호출");
 Boxing - 기본타입을 Wrapper Class로 변경
 Unboxing - Wrapper Class를 기본 타입으로 변경
 
-<hr>
+### static
+
+정적이라는 의미를 가지고 있다.
+
+- Static 키워드를 통해 생성된 정적 멤버들은 Heap이 아니라 Static 영역에 할당을 하게 된다.
+- Static 영역에 할당된 메모리는 모든 객체가 공유하니 어디에서든지 참조할 수 있다.
+- Static 영역에 존재하기 때문에 프로그램 종료시 가지 메모리가 할당된 채로 존재하게 된다.
 
 ### 자바 클래스 멤버 변수 초기화 순서
 
