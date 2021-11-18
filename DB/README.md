@@ -576,3 +576,27 @@ INNER JOIN은 공통 컬럼명 기반으로 결과 집합을 생성했지만, �
 ### NVL
 
 - NVL(속성, 데이터): 속성 값이 null이 아니면 속성 값을 출력하고 null이면 데이터 값을 출력 한다.
+
+### DDL
+
+테이블 인덱스와 같은 데이터베이스 오브젝트의 구조를 정의(생성, 변경, 삭제)하기 위한 구문
+
+- CREATE, ALTER, DROP, RENAME, TRUNCATE
+
+### DML
+
+테이블에 저장된 데이터 조작(조회, 입력, 수정, 삭제)하기 위한 구문
+
+- SELECT, INSERT, UPDATE, DELETE, MERGE
+
+### DCL
+
+데이터에 대한 권한을 부여하거나 취소하기 위한 구문
+
+- GRANT, REVOKE
+
+### TCL
+
+DML문에 의한 데이터의 변경 사항을 데이터베이스에 영구히 반영하거나 취소하기 위해 트랜잭션을 제어하는 구문
+
+- COMMIT, ROLLBACK, SAVEPOINT
