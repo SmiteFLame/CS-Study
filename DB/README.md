@@ -593,6 +593,32 @@ INNER JOIN은 공통 컬럼명 기반으로 결과 집합을 생성했지만, �
 ### 추가 명령문
 
 - NVL(속성, 데이터): 속성 값이 null이 아니면 속성 값을 출력하고 null이면 데이터 값을 출력 한다.
+- LENGTH(D1, A, B): D1의 문자열을 A번째 부터(1부터 시작) B개의 개수만큼 가져온다.
+- LTRIM(D1, '0'): D1의 문자열을 왼쪽부터 '0'를 전부 제거하다가 다른 문자를 만나면 멈춘다.
+- 올림/내림
+  - FLOOR(N1): 내림
+  - CEIL(N1): 올림
+  - ROUND(N1): 반올림
+  - TRUNC(N1, A): N1을 소수점 A번째에서 내림
+- 범위 지정
+  - IN(A, B): A 혹은 B인 값
+    - 2개 동시 지정 방법 : (C1, C2) IN ((D11, D21), (D12, D22))
+  - BETWEEN A AND B: A 초과 B 미만인 값
+  - NULL값은 초과, 이상, 미만, 이하 에 어디에도 포함되지 않는다
+- COUNT
+  - COUNT(\*): 전체 행의 개수를 반환
+  - COUNT(expr): NULL이 아닌 expr의 개수
+  - COUNT(DISTINCT expr): NULL이 아는 expr 고유한 개수를 반환
+- DECODE(C1, D1, E1, D2, E2): C1의 값이 D1이면 E1, D2이면 E2를 전부 반환한다.
+- ORDER BY 2 = ORDER BY C2(2번째 컬럼)
+
+### 추가 내용
+
+- 에러: `SELECT T1.C1 FROM T1 A `
+  - 별칭을 지정하고 기존 테이블 명을 사용하여 에러가 발생한다
+- NULL + 다른 값 = NULL으로 출력이 된다
+- 에러: `SELECT C1, C2 FROM T1 GROUP BY C1`
+  - C1을 Group으로 묶었으나 C2를 그냥 출력했다(MIN/SUM/MAX/COUNT/AVG등 값으로 출력해야 한다)
 
 ### 집합 연산자
 
