@@ -756,13 +756,19 @@ INNER JOIN은 공통 컬럼명 기반으로 결과 집합을 생성했지만, �
   - PIVOT(FOR = PIVOT할 열을 지정, IN - PIVOT할 열을 지정)
   - 집계 함수와 IN 절에 지정한 별칭에 따라서 `SUM (C1) AS D1`으로 지정하면 D1_C1의 값이 된다.
   - UNPIVOT할 때 별칭을 지정하지 않으면 D1_C1 그래도 돌아간다.
+    - UNPIVOT할 때 INCLUDE NULL을 하게 되면 데이터가 없더라도 NULL을 출력한다.
 - REGEXP_SUBSTR(C1, A): C1에서 A와 일치하는 패턴만 출력하게 된다.
   - ?: 탐욕적으로 최대
   - .: 모든 문자
   - +: 1회 또는 그 이상의 횟수로 일치
+  - $: 문자열 끝을 의미한다.
+  - \n: n번째 서브 표현식과 일치?
 - REGEXP_REPLACE(C, D, E): C 안에서 D와 일치한 패턴을 D로 변경한다. 없으면 제거한다.
 - LAG: 현재 행에서 offset 이전의 행의 칼럼값을 반환한다. 기본값은 1이고 이전행이 없으면 NULL, 혹은 지정 값을 반환한다.
 - LEAD: 다음 값들
+- UNLIMITED TABLESPACE: 모든 테이블 스페이스에게 무제한 권한 부여
+- GRANT ALL(ALTER, INDEX, REFERENCES) ON T1 TO U1
+- CREATE ROLL: 롤 생성 가능
 
 ### 추가 내용
 
@@ -803,6 +809,10 @@ INNER JOIN은 공통 컬럼명 기반으로 결과 집합을 생성했지만, �
   = C1 <> 1 AND C1 <> NULL
   = C1 <> 1 AND NULL
   ```
+- 테이블의 특수 문자 허용 `#, $, _`
+- DDL문은 암시적으로 Commit를 수행 한다.
+- NUMBER 타입은 이미 값을 하나라도 입력한 경우 데이터 타입의 크기를 축소할 수 없다.
+- Unique값이 있더라도 NULL은 따로따로 데이터를 넣을 수 있다.
 
 ### 처리 순서
 
