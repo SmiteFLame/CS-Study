@@ -735,6 +735,15 @@ INNER JOIN은 공통 컬럼명 기반으로 결과 집합을 생성했지만, �
 - PAD
   - LPAD(A, LEN, T): A에 T값을 왼쪽 부터 추가 하여 총 길이를 LEN으로 만든다.
   - RPAD(A, LEN, T): A에 T값을 오른쪽 부터 추가 하여 총 길이를 LEN으로 만든다.
+- ROLL UP
+  - GROUP BY를 사용 한 후에 그룹별로 묶어서 SUM 결과를 보여준다.
+  - ROLL UP(C1, C2): C1에 대한 그룹을 보여주고 (C1, C2) 에 대한 그룹을 보여준다.
+- CUDE: ROLL UP과 반대로 위에 결과를 보여준다
+- GROUPING SETS: 지정한 행 그룹으로 행을 집계한다.
+- SUM(C1) OVER(ORDER BY C1): C1을 기준으로 정렬된 테이블에서 C1의 누적합들을 보여준다.
+  - 단, 동일한 값의 행이 있다면 전부 더하고 통일 시킨다(RANGE UNBOUNDED PRECEDING)
+- RANGE BEWTEEN A PRECEDING AND B FOLLOWING: 각 행에서 A값을 제외하고 B을 더한 값을 윈도우로 지정하라는 의미이다.
+  - X값이 있으면 X - A 부터 X + B 까지 윈도우 범위가 된다
 
 ### 추가 내용
 
@@ -767,6 +776,8 @@ INNER JOIN은 공통 컬럼명 기반으로 결과 집합을 생성했지만, �
   - 6. OR
 - MIN(VARCHAR): 숫자일 경우도 문자열로 취급하여 앞에 가장 작은 숫자가 최소 값이 들어간다.
 - `WHERE B.C1(+) = A.C1 AND B.C2 <= 2` 에서는 OUTER JOIN이 되어야 하지만 뒤의 B.C2에는 (+)가 없어서 INNER JOIN으로 변경된다.
+- `SELECT 1` - 해당 테이블의 갯수만큼 1로된 행을 출력한다
+  - 여기서 1은 TRUE를 의미한다.
 
 ### 집합 연산자
 
