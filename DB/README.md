@@ -732,6 +732,9 @@ INNER JOIN은 공통 컬럼명 기반으로 결과 집합을 생성했지만, �
     - 중복 순위 다음 값에 대해서는 중복 값 개수와 상관 없이 순차적인 순위 값을 출력하도록 한다.
   - ROW_NUMBER() OVER(ORDER BY C1 ASC/DESC) RANK등수: C1을 순서대로 정렬하여 출력한다.
     - 중복값들에 대해서도 순차적인 표시하도록 한다.
+  - TOP(N): N개의 상위 데이터를 보여준다
+    - RANK와 같은 내용을 처리한 후에 보여준다.
+    - FETCH FIRST N ROWS ONLY와 같다
 - PAD
   - LPAD(A, LEN, T): A에 T값을 왼쪽 부터 추가 하여 총 길이를 LEN으로 만든다.
   - RPAD(A, LEN, T): A에 T값을 오른쪽 부터 추가 하여 총 길이를 LEN으로 만든다.
@@ -744,6 +747,10 @@ INNER JOIN은 공통 컬럼명 기반으로 결과 집합을 생성했지만, �
   - 단, 동일한 값의 행이 있다면 전부 더하고 통일 시킨다(RANGE UNBOUNDED PRECEDING)
 - RANGE BEWTEEN A PRECEDING AND B FOLLOWING: 각 행에서 A값을 제외하고 B을 더한 값을 윈도우로 지정하라는 의미이다.
   - X값이 있으면 X - A 부터 X + B 까지 윈도우 범위가 된다
+- CONNECT BY: 증가하거나 감소하는 데이터를 동적으로 생성할 때 사용한다.
+  - 계층 전개 시 평가되므로 선택되는 하위 노드에 영향을 미친다.
+- PRIOR: 직전 상위 노드의 값을 반환한다.
+- WITH: UNION ALL 연산자로 다 합쳐서 구성이 된다.
 
 ### 추가 내용
 
