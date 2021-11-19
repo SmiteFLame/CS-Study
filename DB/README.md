@@ -725,6 +725,13 @@ INNER JOIN은 공통 컬럼명 기반으로 결과 집합을 생성했지만, �
 - DECODE(C1, D1, E1, D2, E2): C1의 값이 D1이면 E1, D2이면 E2를 전부 반환한다.
 - ORDER BY 2 = ORDER BY C2(2번째 컬럼)
 - NULLIF(C1, C2): C1 == C2 이면 NULL, 같으면 C1을 반환 한다
+- RANK
+  - RANK() OVER(ORDER BY C1 ASC/DESC) RANK등수: C1을 순서대로 정렬하여 출력한다.
+    - 중복 순위 다음 값은 중보 개수 만큼 떨어진 순위로 출력하도록 한다.
+  - DENSE RANK() OVER(ORDER BY C1 ASC/DESC) RANK등수: C1을 순서대로 정렬하여 출력한다.
+    - 중복 순위 다음 값에 대해서는 중복 값 개수와 상관 없이 순차적인 순위 값을 출력하도록 한다.
+  - ROW_NUMBER() OVER(ORDER BY C1 ASC/DESC) RANK등수: C1을 순서대로 정렬하여 출력한다.
+    - 중복값들에 대해서도 순차적인 표시하도록 한다.
 
 ### 추가 내용
 
@@ -756,6 +763,7 @@ INNER JOIN은 공통 컬럼명 기반으로 결과 집합을 생성했지만, �
   - 5. AND
   - 6. OR
 - MIN(VARCHAR): 숫자일 경우도 문자열로 취급하여 앞에 가장 작은 숫자가 최소 값이 들어간다.
+- `WHERE B.C1(+) = A.C1 AND B.C2 <= 2` 에서는 OUTER JOIN이 되어야 하지만 뒤의 B.C2에는 (+)가 없어서 INNER JOIN으로 변경된다.
 
 ### 집합 연산자
 
