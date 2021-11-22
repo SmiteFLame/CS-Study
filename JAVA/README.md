@@ -109,9 +109,7 @@ JAVA SE, JAVA EE, JRE, JVM을 통합 <br>
 
 - 제한된 자원을 휴대폰, 셋텁박스등 임베디드 시스템에서 자바로 프로그램 개발할 때 이용한다.
 
-<hr>
-
-### Generices
+## Generices
 
 - 제네릭은 클래스 내부에서 사용할 데이터 타입을 외부에서 지정하는 기법
 - 따로 형 변환이 필요 없고 발생하지 않기 때문에 유용하게 사용 가능
@@ -138,9 +136,12 @@ Box<Integer> box1 = new Util.<Integer>boxing(100);
 Box<Integer> box2 = new Util.boxing("암묵적호출");
 ```
 
-<hr>
+## 자바 배열 크기 변경
 
-### Boxing vs Unboxing
+1. Arrays.CopyOf(기존 배열, 새로운 배열 크기)
+2. 배열을 List
+
+## Boxing vs Unboxing
 
 1. 기본 타입(Primitive Type) - char, int, float, double....
 2. 참조 타입(Reference Type) - class, interface <br>
