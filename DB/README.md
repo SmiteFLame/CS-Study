@@ -507,7 +507,9 @@ Hadoop의 HDFS위에 만들어진 분산 컬럼 기반의 데이터 베이스
 
 인 메모리 기반의 대용량 데이터 고속 처리 엔진으로 범용 분산 클러스터 컴퓨팅 프레임 워크
 
-### 구성 요소
+### Spark Application
+
+실제 일을 수행하는 역할을 담당한다
 
 1. Driver: 한 개의 노드에서 실행되며, 스파크 전체의 main 함수를 실행한다.
 
@@ -517,6 +519,35 @@ Hadoop의 HDFS위에 만들어진 분산 컬럼 기반의 데이터 베이스
 2. Executor: 다수의 worker 노드에서 실행되는 프로세스
 
 - Driver가 할당한 작업을 수행하여 결과를 반환한다.
+
+- 1개의 스카프 어플리케이션은 1개의 Driver와 N개의 Executor가 존재한다.
+- Executor는 Cluster Manager에 의하여 해당 스파크 어플리케이션에 할당된다.
+
+- 해당 스파크 어플리케이션이 완전히 종료된 후 할당에서 해방된다
+- 다른 스파크 어플리케이션 간의 직접적인 데이터 공유는 불가능하다.
+
+### Cluster Manager
+
+스파크 어플리케이션 사이에 자원을 중계해주는 역할을 담당한다.
+
+- 스파크 어플리케이션의 리소스를 효율적으로 분배하는 역할을 담당한다.
+- Executor에 Task를 할당하고 관리하기 위해서 클러스터 매니저에 의존한다.
+
+- 사용 가능한 클러스터 매니저: Spark StandAlone, Hadoop Yarn, Mesos, Kubernetes등
+
+### 실행 과정
+
+1. 사용자가 Spark-submit을 통해 어플리케이션을 제출한다.
+2. Spark Driver가 main을 실행하며, Spark Context를 생성한다.
+3. Spark Context가 Cluster Manager와 연결된다.
+4. Spark Driver가 Cluster Manager로 부터 Executor 실행을 위한 리소스를 요청한다.
+5. Spark Context는 작업 내용을 task 단위로 분할하여 Excutor에 보낸다
+6. 각 Executor는 작업을 수행하고, 결과를 저장한다.
+
+- 즉, 사용자 프로그램을 수행하기 위해서, Spark Driver 내의 Spark Context가 Job을 task 단위로 쪼갠다.
+  - Cluster Maanger로 부터 할당받은 Executor로 task를 넘긴다.
+
+### 구성요소
 
 1. Spark Core: 메인 컴포넌트로 작업 스케쥴링, 메모리 관리, 장애 복구와 같은 기본적인 기능을 제공하고, RDD, Dateset, DataFrame을 이용한 스파크 연산을 처리한다.
 2. Spark Library: 빅데이터 처리를 위한 라이브러리
