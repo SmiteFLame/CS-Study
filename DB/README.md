@@ -550,6 +550,14 @@ LinkedIn에서 개발한 분산 메시징 시스템으로 대용량 실시간 �
 - 수평적으로 서버의 Scale-Out이 가능함
 - pub-sub 모델의 메시지 큐
 
+### 구성 요소
+
+- Event: Consumer가 데이터를 주고 받는 단위
+- Producer: 이벤트를 게시(Post)하는 클라이언트 어플리케이션을 의미한다.
+- Consumer: 이러한 Topic을 구독하고 이로 부터 얻어낸 Event를 처리하는 클라이언트 어플리케이션
+- Topic: Event가 쓰이는 곳, Producer는 이 Topic에 Event를 게시한다.
+  - Consumer는 Topic으로 부터 이벤트를 가져와 ㅓ리한다.
+
 ### 빅데이터 관련 내용 정리
 
 - Hadoop: 대용량의 데이터를 적은 비용으로 더 빠르게 분석할 수 있는 플랫폼
