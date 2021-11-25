@@ -414,6 +414,11 @@ HashTable - Map 인터페이스를 구현한 클래스로 중복허용X, 동기�
 
 - HashMap과 다르게 Key값으로 null을 허용하지 않는다.
 
+### Add vs Offer
+
+- add: 데이터를 추가할 때 문제 상황이 발생하는 경우 예외를 던진다
+- offer: 데이터를 추가할 때 문제 상황이 발생하는 경우 false를 던진다
+
 <hr>
 
 ## Call By Value vs Call By Reference
