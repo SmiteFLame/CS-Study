@@ -57,6 +57,7 @@ PC Register를 스레드마다 독립적으로 할당하는 이유
 - Process가 Thread보다 많이 든다.
   - Thread는 Stack영역을 제외한 모든 메모리를 공유하기 때문
   - Context Switching 발생시 Stack영역만 변경하면 되기 때문에
+- 우선순위: ((대기 시간 + CPU 처리 시간) / CPU 처리 시간)
 
 ### Interrupt
 
