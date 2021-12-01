@@ -469,3 +469,16 @@ Web MVC 코드에서 사용되는 Annotation, @RequestMapping을 해당 Annotati
 ### VS Quartz
 
 Quartz는 스케줄러의 역할이고 Batch와 같이 대용량 데이터 배치 처리에 대한 기능을 지원하지 않는다.
+
+## 중복 코드 제거
+
+### Filter
+
+Dispatcher Servlet에 요청이 전달되기 전/후에 URL 패턴에 맞는 모든 요청에 대해 부가 작업을 처리할 수 잇는 기능을 제공
+
+- Spring Container가 아닌 Tomcat과 같은 Web Container에 의해 관리가 되므로 Dispatcher Servlet 가기전에 요청을 처리하는 것이다.
+
+- init: 필터 객체를 초기화하고 서비스에 추가하기 위한 메소드
+  - 1회 init 메서드를 호출하여 필터 객체를 초기화 하면 이후 요청들은 doFilter를 통해 전/후 처리 된다.
+- doFilter: url-pattern에 맞는 모든 HTTP 요청이 Dispatcher Servlet으로 전달되기 전/후에 컨테이너에 의해 실행되는 메서드
+- destroy: 필터 객체를 서비스에서 제거하고 사용하는 자원을 반환하기 위한 메서드
