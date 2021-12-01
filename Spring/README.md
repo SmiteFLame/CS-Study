@@ -371,6 +371,11 @@ Web MVC 코드에서 사용되는 Annotation, @RequestMapping을 해당 Annotati
 - Private 메소드에서는 사용 불가능 하다, 프록시 객체를 생성하야 하기 때문에 상속받을 수 없는 private는 트랜잭션 관리가 되지 않는다.
 - 내부의 메소드 호출시 트랜잭션 관리가 되지 않는다: 메소드를 호출하면 프록시 객체가 아닌 대상 객체 메소드를 호출하기 떄문에 트랜잭션 적용이 되지 않는다.
 
+1. 클래스, 메서드에 @Transactional이 선언되면 해당 클래스에 트랜잭션이 적용된 프록시 객체 생성
+2. 프록시 객체는 @Transcational이 포함된 메서드가 실행될 경우, 트랜잭션을 시작하고 Commit or Rollback을 수행
+3. CheckedException or 예외가 없는 경우 Commit
+4. UnchechedException이 발생하면 Rollback
+
 ## Spring Batch
 
 - Batch: 일괄처리, 실행 도중 문제가 생기면 그 지점부터 재 시작할 수 있다는 점
