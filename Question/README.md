@@ -51,6 +51,7 @@
 6. Annotation 별로 동작 원리
 7. Spring의 동작 순서
 8. JPA의 특징
+9. Transaction 동작 원리
 
 ## REST
 
@@ -58,6 +59,7 @@
 2. Https의 동작 순서
 3. Stateless하면 이점은 무엇인가
 4. PUT과 PATCH의 차이점은 무엇인가
+5. HTTP 상태 코드
 
 ## 인성질문
 

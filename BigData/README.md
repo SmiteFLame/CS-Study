@@ -256,7 +256,7 @@ Hadoop의 HDFS위에 만들어진 분산 컬럼 기반의 데이터 베이스
    - park Streaming: 실시간 데이터 스트림을 처리하는 컴포넌트이다.
    - MLib: 스파크 기반의 머신러닝 기능을 제공하는 컴포넌트이다.
    - GraphX: 분산형 그래프 프로세싱이 가능하게 해주는 컴포넌트이다.
-3. Cluster Manager: 스파크 작업을 운영하는 클러스터 관리지이다
+3. Cluster Manager: 스파크 작업을 운영하는 클러스터 관리자이다
 
 ### 장점
 
@@ -297,7 +297,7 @@ LinkedIn에서 개발한 분산 메시징 시스템으로 대용량 실시간 �
 - Producer: 이벤트를 게시(Post)하는 클라이언트 어플리케이션을 의미한다.
 - Consumer: 이러한 Topic을 구독하고 이로 부터 얻어낸 Event를 처리하는 클라이언트 어플리케이션
 - Topic: Event가 쓰이는 곳, Producer는 이 Topic에 Event를 게시한다.
-  - Consumer는 Topic으로 부터 이벤트를 가져와 ㅓ리한다.
+  - Consumer는 Topic으로 부터 이벤트를 가져와 처리한다.
 
 ### 빅데이터 관련 내용 정리
 

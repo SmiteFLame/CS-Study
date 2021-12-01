@@ -602,7 +602,7 @@ Final 필드는 초기값이 저장되면 최종적인 값이 되어 프로그�
 
 ### String Pool
 
-자바에서 String을 관리하기 위해서 String Pool을 통해서 해시코드값드릉ㄹ 저장
+자바에서 String을 관리하기 위해서 String Pool을 통해서 해시코드 값들을 저장
 
 - "=="를 통해서 String이 같이 않을 때의 원인이 된다.
 - String이 선언되면 String Pool에 반드시 String literal이 생겨난다. 그리고 같은 값을 찾는 경우가 생가면 다시 반환한다.
