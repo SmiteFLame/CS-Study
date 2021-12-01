@@ -376,6 +376,16 @@ Web MVC 코드에서 사용되는 Annotation, @RequestMapping을 해당 Annotati
 3. CheckedException or 예외가 없는 경우 Commit
 4. UnchechedException이 발생하면 Rollback
 
+전파 레벨(Propagation)
+
+- REQUIRED(DEFAULT): 부모 트랜잭션내에서 실행하며 부모 트랜잭션이 없으면 새로운 트랜잭션 생성
+- REQUIRES_NEW: 부모 트랜잭션을 무시하고 새로운 트랜잭션 생성
+- SUPPORT: 부모 트랜잭션에서 실행하며 없는 경우 트랜잭션 없이 실행
+- MANDATORY: 부모 트랜잭션에서 실행하며 부모 트랜잭션이 없으면 예외 발생
+- NOT_SUPPORT: 트랜잭션 없이 실행하며 부모 트랜잭션 내에서 실행될 경우 일시 정지
+- NEVER: 트랜잭션 없이 실행하며 부모 트랜잭션이 존재하며 예외 발생
+- NESTED: 부모 트랜잭션에서 진행될 경우 별개로 Commit, Rollback 가능, 부모 트랜잭션이 없으면 REQUIRED와 동일
+
 ## Spring Batch
 
 - Batch: 일괄처리, 실행 도중 문제가 생기면 그 지점부터 재 시작할 수 있다는 점
