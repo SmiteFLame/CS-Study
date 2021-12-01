@@ -472,6 +472,8 @@ Quartz는 스케줄러의 역할이고 Batch와 같이 대용량 데이터 배�
 
 ## 중복 코드 제거
 
+Client -> [Filter] -> Dispatcher -> [Interceptor] -> Controller
+
 ### Filter
 
 Dispatcher Servlet에 요청이 전달되기 전/후에 URL 패턴에 맞는 모든 요청에 대해 부가 작업을 처리할 수 잇는 기능을 제공
@@ -482,3 +484,12 @@ Dispatcher Servlet에 요청이 전달되기 전/후에 URL 패턴에 맞는 모
   - 1회 init 메서드를 호출하여 필터 객체를 초기화 하면 이후 요청들은 doFilter를 통해 전/후 처리 된다.
 - doFilter: url-pattern에 맞는 모든 HTTP 요청이 Dispatcher Servlet으로 전달되기 전/후에 컨테이너에 의해 실행되는 메서드
 - destroy: 필터 객체를 서비스에서 제거하고 사용하는 자원을 반환하기 위한 메서드
+
+### Interceptor
+
+Spring에서 제공하는 기술로써 Dispatcher Servlet이 Controller를 호출하기 전과 후에 요청과 응답을 참조하거나 가공할 수 있는 기능을 제공
+
+- preHandler: Controller가 호출되기 전에 실행된다. 컨트롤러 이전에 처리해야 하는 전처리 작업이 있을 때 사용된다.
+- postHandler: Controller가 호출된 후에 실행된다. 후처리 작업때 사용된다.
+- afterCompletion: 모든 뷰에서 최종 결과를 생성하는 일을 포함해 모든 작업이 완료된 후에 실해오딘다.
+  - 요청 처리 중에 사용한 리소스를 반환할 때 사용하기에 적합하다.
