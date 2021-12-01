@@ -607,6 +607,19 @@ Final 필드는 초기값이 저장되면 최종적인 값이 되어 프로그�
 - "=="를 통해서 String이 같이 않을 때의 원인이 된다.
 - String이 선언되면 String Pool에 반드시 String literal이 생겨난다. 그리고 같은 값을 찾는 경우가 생가면 다시 반환한다.
 - new 를 통해서 생성되는 경우 새로운 메모리가 Heap에 선언이 되면서 같은 문자열이라도 String Pool에 추가된다.
+- 즉, new로 생성된 String은 완전히 다른 메모리에 존재를 하게 되어 String Pool에 없이 존재한다.
+
+```JAVA
+String str1 = "abc";
+String str2 = new String("abc");
+String str3 = new String("abc");
+String str4 = "abc";
+if(str1 == str2) -> false // new 연산자와 String Pool의 차이
+if(str3 == str4) -> false // new 연산자와 String Pool의 차이
+if(str1 == str4) -> true  // 같은 String Pool에 있음
+if(str2 == str3) -> false // new 연산자와 new 연산자 이므로 주소값이 다름
+
+```
 
 ### 정리
 
