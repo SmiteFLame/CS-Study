@@ -860,8 +860,8 @@ REpresentation State Transfer API(표현 상태 전송 API)
 - URI: 네트워크 상에서 자원 위치를 알려주기 위한 규약
 - URL: 통합 자원 식별자로 인터넷에 있는 자원을 나타내는 유일한 주소
 - URI가 URL보다 상위 개념
-- http://example.com이면 URI이자 URI가 된다
-- http://example.com/skin 이면 자원의 위치를 의미하기 때문에 둘다 된다.
+- http://example.com이면 URL이자 URI가 된다
+- http://example.com/skin 이면 자원의 위치를 의미하기 때문에 URL이자 URI가 된다
 - http://example.com/123 이면 123이라는 식별자가 추가로 주어지므로 URI이지만 URL은 아니다
 
 ## Kafka
