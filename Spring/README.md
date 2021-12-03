@@ -208,6 +208,11 @@ MVC는 Model-View-Controller으로 구성이 되어 있다
 4. MSA에서 우리는 MVC, WebFlux 컨트롤러의 혼합 애플리케이션을 가질 수 있다.
 5. JPA, JDBC 또는 네트워크 API에 의존하는 경우 MVC가 최선의 선택이다.
 
+### Mono VS Flux
+
+- Mono: 0 ~ 1개의 데이터를 전송
+- Flux: 0 ~ N개의 데이터를 전송
+
 <hr>
 
 ## 데이터베이스 연동
