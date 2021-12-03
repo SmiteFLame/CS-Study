@@ -189,6 +189,25 @@ MVC는 Model-View-Controller으로 구성이 되어 있다
 7. DispatcherServlet는 Controller에서 View에 전달할 데이터를 추가한다.
 8. 데이터가 추가된 View를 반환한다.
 
+## Webflux
+
+클라이언트, 서버에서 reactive 스타일의 어플리케이션 개발을 도와주는 모듈
+
+- 장점: 고성능, spring과 완벽한 통합, netty 지원, 비동기 non-blocking 메시지 처리
+- 단점: 오류처리가 다소 복잡하다. Back Pressure 기능 없음
+
+### Spring MVC와 차이
+
+- 공통점: @Controller, Reactive 클라이언트: 둘다 Tomcat, Jetty, Undertow와 같은 서버에서 실행할 수 있다.
+- MVC: 명령형 노리, JDBC, JPA를 가질 수 있따.
+- Webflux: 기능정 엔드 포인트, 이벤트 루프, 동시성 모델, Netty 서버에서 실행 가능
+
+1. 이미 Spring MVC 애플리케이션이 있다면 Spring WebFlux으로 바꿀 이유 없다.
+2. non-blocking 웹 스택을 생성하고자 한다면, 선택 가능한 서버를 제공하는 Spring WebFlux를 선택할 수 있다.
+3. Spring WebFlux는 Java 8 lambda 또는 Kotlin과 함께 사용하는 가볍고 기능적인 웹 프레임 워크에 유용하다.
+4. MSA에서 우리는 MVC, WebFlux 컨트롤러의 혼합 애플리케이션을 가질 수 있다.
+5. JPA, JDBC 또는 네트워크 API에 의존하는 경우 MVC가 최선의 선택이다.
+
 <hr>
 
 ## 데이터베이스 연동
