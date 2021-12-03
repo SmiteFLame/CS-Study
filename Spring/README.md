@@ -313,6 +313,12 @@ JPA는 단순히 명세이기 떄문에 구현이 없다. 대부분 Interface, E
   - 엔티티의 수정 시 따로 쿼리 조작 메서드가 필요 없음
   - Entity 데이터 수정시 update나 persisit를 통해서 영속성 컨텍스트에 해당 데이터를
 
+### Hikari CP
+
+Spring boot부터 default로 설정되어 있는 DB Connection Pool로써 Zero-Overhead가 특징으로 높은 성능을 자랑하는 DB ConnectionPool
+
+- 미리 정해좋은 만큼 Connection Pool을 담아 놓는다. 그 후에 요청이 들어오면 Thread가 Connection을 요청하고 Connection Pool내에 있는 Connection을 연결해 주는 역할을 한다.
+
 ### 캐시
 
 - 1차 캐시: 영속성 컨텍스트 내부의 엔티티를 보관하는 장소
