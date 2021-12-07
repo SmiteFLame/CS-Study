@@ -737,3 +737,32 @@ INNER JOIN은 공통 컬럼명 기반으로 결과 집합을 생성했지만, �
 - INTERSECTION 연산(교집합): INTERSECT
 - DIFFERENCE 연산(차집합): EXCEPT, MINUS
 - PRODUCT 연산(곱집합): CROSS JOIN
+
+## Storage Engine
+
+물리적 저장장치에서 데이터를 어떤 식으로 구성하고 읽어올지 결정하는 역핳ㄹ을 한다.
+
+### InnoDB
+
+Default로 설정이 되는 스토리지 엔진
+
+- 트랜잭션을 지원하여, 커밋, 롤백 그리고 데이터 복구 기능을 제공하므로 데이터를 효과적으로 보호할 수 있다.
+- 기본적으로 row - level locking을 제공하며, clustered index에 저장하여 PK 기반의 query를 줄인다.
+
+### MyISAM
+
+- 트랜잭션을 지원하지 않고 table-level locking을 제공한다.
+- 1개의 ROW를 READ 하더라도 테이블을 전체 락을 잡기 때문에 multi-thread 환경에서 성능이 저하될 수 있다.
+- 기능적으로 단순하기 때문에 작업은 InnoDB보다 빠르다
+
+- 단순 조회 같은 경우는 MyISAM이 더 빠르지만, Order By등의 정렬등의 구문이 들어가면 InnoDB가 더 빠르다.
+- MyISAM은 Full Text Searching을 지원한다.
+
+### Archive
+
+로그 수집에 적합한 엔진
+
+- 데이터가 메모리상에서 압축되고 압축된 상태로 디스크에 저장되기 때문에 row-level locking이 가능하다.
+- 다만 한번 INSERT된 데이어튼 UPDATE, DELETE를 사용할 수 없으며 index를 지원하지 않는다.
+- 거의 가공하지 않을 원시 로그 데이터를 관리하는데 효율적일 수 있고, 테이블 파티셔닝도 지원한다.
+- 트랜잭션을 지원하지 않는다.
