@@ -352,6 +352,12 @@ Major GC
 - ResultSet: 결과값을 저장할 수 있다
   - 저장된 값을 한 행 단위로 타입을 지정해서 가져올 수 있다
 
+### Transaction 동작 원리
+
+1. 데이터 베이스를 연결한다 Data-Source를 설정한 후 Connection을 통해서 가져온다.
+2. setAutoCommit은 모든 SQL statement를 래핑 한다. false로 설장하면 트랜잭션을 내가 제어하게 된다.
+3. commit과 rollback을 하면서 적용한다.
+
 ### Web Server VS WAS Server
 
 Web - HTML, CSS, JS등 정적인 데이터를 처리하는 웹 서버
