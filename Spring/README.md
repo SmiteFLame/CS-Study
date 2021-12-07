@@ -110,6 +110,13 @@ Getter, Setter등 단순한 자바 오브젝트를 사용함으로써 의존성�
 - 인트록덕션(Introduction): 타겟이 없는 새로운 메서드나 인스턴스 변수를 추가하는 기능
 - 위빙(Weaving): Point Cut에 의해서 결정된 Target의 Join Point에 Advice를 적용하는 것
 
+- 트랜잭션 기능이 담긴 Advice는 이미 등록되어 있으며 @Transaction을 타깃에 명시하면 Point Cut 정보를 등록한다.
+- 이 Advice와 Point Cut을 가지는 어드바이저는 Bean으로 등록하게 된다.
+- Bean 후 처리기는 타깃 Bean이 생성된 직후 어드바이저 Bean을 조회 후 생성된 타깃 Bean에 어드 바이스가 적용될지 Point Cut이 판단한다.
+- 판단 결과에 따라 Target Bean에 프록시 객체로 대신 치환 된다.
+
+- 클라이언트는 Target Bean을 주입 받고 타깃 메서드를 호출하는 것 처럼 보이겠지만 실제로는 프록시 객체를 주입 받고 프록시 객체 메서드를 먼저 호출 하게 된다.
+
 ### JDK Dynamic Proxy
 
 Proxy를 추가하여 AOP를 적용하는 방식
