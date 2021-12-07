@@ -16,6 +16,15 @@
 
 ### 추상 팩토리 (Abstract Factory)
 
+구체적인 클래스에 의존하지 않고 서로 연관되거나 의존적인 객체들의 조합을 만드는 인터페이스를 제공하는 패턴
+
+- 싱글턴 패턴, 팩토리 메서드 패턴을 사용한다.
+
+- Abstract Factory: 실제 팩토리 클래스의 최상단 공통 인터페이스
+- Concrete Factory: 구체적인 팩토리 클래스, Abstarct Factory를 맏아서 사용 한다.
+- Abstract Product: 제품의 공통 인터페이스
+- Concrete Product: 구체적인 팩토리 클래스에서 생성되는 구체적인 제품
+
 ### 빌더 (Builder)
 
 ### 팩토리 메서드 (Factroy Methods)
