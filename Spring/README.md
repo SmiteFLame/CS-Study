@@ -117,6 +117,9 @@ Getter, Setter등 단순한 자바 오브젝트를 사용함으로써 의존성�
 
 - 클라이언트는 Target Bean을 주입 받고 타깃 메서드를 호출하는 것 처럼 보이겠지만 실제로는 프록시 객체를 주입 받고 프록시 객체 메서드를 먼저 호출 하게 된다.
 
+- Service를 인스턴스화 할 뿐만이 아니라 Service의 트랜잭션 'Proxy'도 인스턴스화 한다.
+- 모든 트랜잭션을 처리하는 것이 프록시 자체가 아니라 트랜잭션 매니저에 위임하여 처리한다.
+
 ### JDK Dynamic Proxy
 
 Proxy를 추가하여 AOP를 적용하는 방식
@@ -160,6 +163,17 @@ Java 리플랙션 대신 바이트 코드 생성 프레임워크를 사용하여
 - 자동설정, 쉬운 의존성 관리, 내장 서블릿 컨테이너
 - Starter 종속성을 제공하여 애플리케이션의 간편하고 자동화된 빌드 및 설정 제공
 - embedded서버를 제공하면서 복잡한 설정들을 간편하게 제공
+
+### 기본 Tranasction
+
+TranscationTemplate을 사용하거나 PlatformTransactionManager를 이용한다.
+
+VS JDBC
+
+- 데이터베이스 커넥션(Connection)을 직접 열고 닫을 필요가 없다. 대신 트랜잭션 콜벡을 사용한다.
+- SQLException을 잡을 필요 없다. Spring이 직접 RuntimeException으로 변환해준다.
+- 스프링 환경에 더 적절하고, TransactionTemplate은 내부적으로 PlatformTransactionManager를 사용한다.
+  - 모든 것이 Spring Context Configuartion에서 지정해야하는 Bean들이지만, 나중에는 수정할 필요가 없다.
 
 <hr>
 
