@@ -150,7 +150,7 @@ val - 런타임 시점에 할당이 된다.<br>
 - 다시 코루틴1을 실행하더라도 상태 그래도를 불러와서 코루틴1을 실행한다.
 - 스레드의 멈춤 없이 루틴을 돌릴 수 있게 되며 성능 향상이 된다.
 
-### Companion Object
+## Companion Object
 
 Static 용도로 사용하게 되지만 Companion object는 객체이다
 
@@ -160,3 +160,13 @@ Static 용도로 사용하게 되지만 Companion object는 객체이다
 - 인터페이스에도 Companion Object를 추가할 수 있다.
 - 상속 관게에서 Companion Object 멤버는 같은 이름일 경우 가려진다.
   - 자식 클래스에서도 사용하고 있다면 자식 클래스의 Companin Object를 사용하게 된다.
+
+## Data class
+
+- 데이터 보관 목적으로 만든 클래스
+- toString(), hashCode(), equals(), copy() 메서드를 자동으로 만들어 준다.
+
+- 생성자는 1개 이상의 프로퍼티를 선언되어야 한다.
+- 생성자 프로퍼티는 var, val으로 해야 한다.
+- 데이터 클래스는 abstract, open, sealed, inner 를 붙일 수 없다.
+- 데이터 클래스를 상속 받을 수 없다.
