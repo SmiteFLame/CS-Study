@@ -149,3 +149,14 @@ val - 런타임 시점에 할당이 된다.<br>
 - 코루틴1을 실행 중 코루틴 2를 실행하더라도 Context Switching이 되는 것이 아니라 기존 스레드를 유지하면서 코루틴2를 실행한다.
 - 다시 코루틴1을 실행하더라도 상태 그래도를 불러와서 코루틴1을 실행한다.
 - 스레드의 멈춤 없이 루틴을 돌릴 수 있게 되며 성능 향상이 된다.
+
+### Companion Object
+
+Static 용도로 사용하게 되지만 Companion object는 객체이다
+
+- 클래스 내의 정의된 Companion Object는 클래스 이름만으로 참조 접근이 가능하다.
+- Companion Object에 이름을 추가하여 사용할 수 있다.
+- 클래스 내에서 Companion Object는 하나만 사용할 수 있다.
+- 인터페이스에도 Companion Object를 추가할 수 있다.
+- 상속 관게에서 Companion Object 멤버는 같은 이름일 경우 가려진다.
+  - 자식 클래스에서도 사용하고 있다면 자식 클래스의 Companin Object를 사용하게 된다.
