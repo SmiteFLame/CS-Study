@@ -25,6 +25,13 @@
 - 딥러닝은 분류에 사용할 데이터를 스스로 학습할 수 있다.
   - 머신러닝은 학습 데이터를 수동으로 제공해야 한다는 점이 딥러닝과의 차이점이다.
 
+## 용어 정리
+
+- Accuarcy: 정확도
+- Dataset: 데이터 셋(사례를 모은 것)
+- Train: 학습
+- Validation: 검증
+
 ## Validation
 
 ### K-Fold Cross Validation
