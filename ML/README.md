@@ -25,6 +25,20 @@
 - 딥러닝은 분류에 사용할 데이터를 스스로 학습할 수 있다.
   - 머신러닝은 학습 데이터를 수동으로 제공해야 한다는 점이 딥러닝과의 차이점이다.
 
+## Validation
+
+### K-Fold Cross Validation
+
+Train data에서 일부를 떼서 validataion으로 사용한다.
+
+- train을 통해 나오는 accuracy는 validation dataset의 accuracy이다.
+- 여기서 train에서 떠에낸 특정 부분만이 accuracy이며, 다른 부분에서 떼어낼 경우 accuracy가 달라지게 된다.
+- 즉, bias(편견이 있는) validation
+
+1. 데이터를 k등분 한다.
+2. 순서대로 1/k를 validation으로 사용하며, 나머지를 9개를 train으로 사용한다.
+3. k번의 validation 결과로 나온 accuracy를 평균 낸다.
+
 ## 지도 학습
 
 정답을 알려주며 학습하는 것
