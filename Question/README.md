@@ -6,11 +6,14 @@
 2. 멀티 프로세스와 멀티 스레드의 차이
 3. 메모리 영역에서 스택과 힙의 차이점
 4. Mutex와 Semaphore의 차이점
+5. Context Swithcing
+6. Synchronization
 
 ## 네트워크
 
 1. OSI 7계층에 대해서 전부 설명
 2. TCP, UDP, IP, Http 프로토콜어느 어느 계층에 속하고 있는지
+3. IP VS MAC
 
 ## 데이터 베이스
 
@@ -31,15 +34,27 @@
 4. LinkedList가 있는 데 Stack이랑 Queue가 존재하는 이유
 5. HashMap VS TreeMap VS LinkedHashMap의 차이
 
+## 알고리즘
+
+1. Stable VS Unstable
+2. Quick VS Merge
+3. 각각의 시간 복잡도 공간 복잡도
+4. DFS VS BFS
+5. 그리디 알고리즘 VS DP 알고리즘
+
 ## 자바
 
 1. 자바 언어의 장점
 2. 자바 언어의 특징
-3. JDBC
-4. String VS StringBuilder VS StringBuffer
-5. JVM의 구성요소
-6. GC의 동작 원리
-7. 제너릭
+3. OOP 5원칙
+4. JDBC
+5. String VS StringBuilder VS StringBuffer
+6. Interface VS Abstract VS Class
+7. ArrayList VS LinkedList
+8. String Pool
+9. JVM의 구성요소
+10. GC의 동작 원리
+11. 제너릭
 
 ## Spring
 
@@ -52,6 +67,11 @@
 7. Spring의 동작 순서
 8. JPA의 특징
 9. Transaction 동작 원리
+10. Dynamic Proxy VS CGLib
+11. Controller VS Service
+12. Mybatis VS JPA
+13. 영속성 컨텍스트
+14. Connection Pool
 
 ## REST
 
@@ -72,7 +92,3 @@
 7. 버그가 생겼을 때 어떻게 해결하는 가
 8. 실패한 경험을 어떻게 극복 하였는가
 9. 리더십을 많이 가지고 있는 이유
-
-## 프로젝트 관련 질문
-
-- 프로젝트 마다 전부 질문 상이
