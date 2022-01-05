@@ -98,6 +98,11 @@ Fetch Join
 
 연관 관계에서 발생하는 이슈로 연관 관계가 설정된 엔티티를 조회할 경우 조회된 데이터 개수(n) 만큼 연관관계의 조회 쿼리가 추가로 발생하여 데이터를 읽어오게 된다.
 
+케이스
+
+- fetchType.EAGER 변경 후 findAll()로 조회하는 경우
+- fetchType.LAZY 변경 후 Loop으로 조회하는 경우
+
 - JpaRepository에 정의한 인터페이스 메서드를 실행하면 JPA는 메서드 이름을 분석하여 JPQL을 생성하여 실행
 - JPQL은 SQL을 추상화한 객체지향 쿼리 언어로서 특정 SQL에 종속되지 않고 엔티티 객체와 필드 이름을 가지고 쿼리를 한다.
 - JPQL은 findAll()이란 메서드를 수행하였을 때 해당 엔티티를 조회하는 select \* from table쿼리만 실행
