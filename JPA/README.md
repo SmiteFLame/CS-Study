@@ -81,3 +81,15 @@ JPA는 단순히 명세이기 떄문에 구현이 없다. 대부분 Interface, E
 
 - 사실상 연결 테이블을 엔티티로 승격시켜준다.
 - 그리고 일대다, 다대일 관계를 맺어주는 것이 좋다.
+
+## Fetch Join
+
+일반 Join
+
+- 연관 Entitiy에 Join을 걸어도 실제 쿼리에서는 SELECT하는 Entitiy는 오직 JPQL에서 조회하는 주체가 되는 Entitiy만 조회하여 영속화
+- 해당 Entity만 SELECT해서 영속화하기 때문에 데이터는 필요하지 않지만 연관 Entitiy가 검색조건에는 필요한 경우에 주로 사용
+
+Fetch Join
+
+- 조회의 주체가 되는 Entitiy이외에 Fetch Join이 걸린 연관 Entitiy도 함께 SELECT 하여 모두 영속화
+- Fetch Join이 걸린 Entitiy 모두 영속화하기 때문에 FecthType이 Lazy인 Entity를 참조하더라도 이미 영속성 컨텍스트에 들어있기 때문에 따로 쿼리가 실행되지 않은 채로 N + 1문제가 해결됨
