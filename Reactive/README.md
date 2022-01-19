@@ -52,3 +52,22 @@ Subscriber가 Publisher를 구독(Subscribe)하면 Publisher가 통지한 데이
 4. 데이터를 받은 Subscriber는 받은 데이터를 사용해 처리 작업을 수행한다.
 5. Publisher는 요청 받은 만큼의 데이터를 통지한 뒤 subscriber로 부터 다음 요청이 올때 까지 데이터 통지를 중단한다.
 6. 이후 Subscriber가 처리 작업을 완료하면 다음 받은ㄹ 데이터 개수를 요청한다.
+7. Publisher는 Subscriber에 모든 데이터를 통지하고 마지막으로 데이터 전송이 완료되었다고 통지(onCompelete)한다.
+8. 완료 통지를 하고 나면 Publisher는 이 구독 건에 대해 어떤 통지도 하지 않는다.
+
+- 데이터 개수를 요청하는 이유: Publisher가 통지하는 데이터 개수를 제어하기 위해
+- Publisher와 Subscriber의 처리가 각각 다른 스레드에서 진행되는데 Publisher의 통지 속도가 빠르면 Subscriber가 소화할 수 없으므로
+
+### 프로토콜
+
+1. onSubscribe: 데이터 통지가 준비 됐음을 통지
+2. onNext: 데이터 통지
+3. onError: 에러(이상 종료) 통지
+4. onComplete: 완료(정상 종료) 통지
+
+### 인터페이스
+
+1. Publisher: 데이터를 생성하고 통지하는 인터페이스
+2. Subscriber: 통지된 데이터를 전달받아 처리하는 인터페이스
+3. Subscription: 데이터 개수를 요청하고 구독을 해지하는 인터페이스
+4. Processor: Publisher와 Subscriber의 기능이 모두 있는 인터페이스
