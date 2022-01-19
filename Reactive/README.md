@@ -71,3 +71,7 @@ Subscriber가 Publisher를 구독(Subscribe)하면 Publisher가 통지한 데이
 2. Subscriber: 통지된 데이터를 전달받아 처리하는 인터페이스
 3. Subscription: 데이터 개수를 요청하고 구독을 해지하는 인터페이스
 4. Processor: Publisher와 Subscriber의 기능이 모두 있는 인터페이스
+
+### Subscription
+
+Publisher와 Subscriber가 사용하는 Subscription은 통지 받을 데이터 개수를 지정해 데이터 통지를 요청하거나 해지할 때 사용하는 인터페이스
