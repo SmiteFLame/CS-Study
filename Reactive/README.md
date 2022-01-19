@@ -75,3 +75,15 @@ Subscriber가 Publisher를 구독(Subscribe)하면 Publisher가 통지한 데이
 ### Subscription
 
 Publisher와 Subscriber가 사용하는 Subscription은 통지 받을 데이터 개수를 지정해 데이터 통지를 요청하거나 해지할 때 사용하는 인터페이스
+
+## Reactive Streams 규칙
+
+1. onSubscribe는 해당 구독에서 한 번만 발생한다.
+2. 통지는 순차적으로 이루어 진다.
+3. null을 통지하지 않는다.
+4. Publisher의 처리는 완료(onComplete) 또는 에러(onError)를 통지해 종료한다.
+
+Subscription의 규칙
+
+1. 데이터 개수 요청에 Long.MAX_VALUE를 설정하면 데이터 개수의 의한 통지 제한은 없어진다.
+2. Subscription의 메서드는 동기화 된 상태로 호출해야 한다.
