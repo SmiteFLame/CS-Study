@@ -34,3 +34,21 @@
 
 - 함수형 인터페이스를 인자로 전달받는 매서드를 사용해 대부분의 처리를 구현한다.
 - 입력과 결과만 정해져 있다면 구체적인 처리는 개발자에게 맡길 수 있으므로 자유로운 구현이 간으하다.
+
+## Reactive Stream
+
+라이브러리나 프레임 워크에 상관 없이 데이터 스트림을 비동기로 다룰 수 있는 공통 매커니즘
+
+### Reactive Stream의 구성
+
+- Publisher(생산자): 데이터를 만들어 통지
+- Subscriber(소비자): 데이터를 받아 처리하는 소비자
+
+Subscriber가 Publisher를 구독(Subscribe)하면 Publisher가 통지한 데이터를 Subscriber가 받을 수 있다.
+
+1. Publisher는 통지 준비가 끝나면 Subscriber에 통지(onSubscribe)한다.
+2. 해당 통지를 받은 Subscriber는 받고자 하는 데이터 개수를 요청, 요청하지 않으면 Publisher는 계속 기다리게 된다.
+3. Publisher는 데이터를 만들어 Subscriber에 통지(onNext) 한다.
+4. 데이터를 받은 Subscriber는 받은 데이터를 사용해 처리 작업을 수행한다.
+5. Publisher는 요청 받은 만큼의 데이터를 통지한 뒤 subscriber로 부터 다음 요청이 올때 까지 데이터 통지를 중단한다.
+6. 이후 Subscriber가 처리 작업을 완료하면 다음 받은ㄹ 데이터 개수를 요청한다.
