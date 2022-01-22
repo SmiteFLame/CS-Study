@@ -24,14 +24,11 @@
 - [객체지향](https://github.com/SmiteFLame/CS-Study/blob/master/OOP/README.md)
 - [Reactive](https://github.com/SmiteFLame/CS-Study/blob/master/Reactive/README.md)
 
-### 프레임 워크
-
-- [Spring](https://github.com/SmiteFLame/CS-Study/blob/master/Spring/README.md)
-- [JPA](https://github.com/SmiteFLame/CS-Study/blob/master/JPA/README.md)
-
 ### Backend 역량
 
 - [REST](https://github.com/SmiteFLame/CS-Study/blob/master/REST/README.md)
+- [Spring](https://github.com/SmiteFLame/CS-Study/blob/master/Spring/README.md)
+- [JPA](https://github.com/SmiteFLame/CS-Study/blob/master/JPA/README.md)
 
 ### FrontEnd 역량
 
