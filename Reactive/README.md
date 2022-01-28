@@ -87,3 +87,26 @@ Subscription의 규칙
 
 1. 데이터 개수 요청에 Long.MAX_VALUE를 설정하면 데이터 개수의 의한 통지 제한은 없어진다.
 2. Subscription의 메서드는 동기화 된 상태로 호출해야 한다.
+
+## RxJava
+
+### 기본 구조
+
+데이터를 만들고 통지하는 생산자와 통지된 데이터를 받아 처리하는 소비자로 구성된다.
+
+- 생산자를 소비자가 구독해 생산자가 통지한 데이터를 소비자가 받게 된다.
+- Reactive Streams 지원
+  - 생산자: Flowable
+  - 소비자: Subscriber
+  - 기본적인 매커니즘은 Reactive Streams와 같다
+    - Flowable로 구독 시작, 데이터 통지, 에러 통지, 완료 통지를 하게 된다.
+- Reactive Streams 미지원
+  - 생산자: Observable
+  - 소비자: Observer
+  - RxJava 2.x 버전의 Obserable과 Observer는 Reactive Streams를 구현하지 않아서 Reactive Streams 인터페이스를 사용하지 않는다.
+  - 기본적인 매커니즘은 거의 같다
+  - 데이터 개수를 제어하는 배압 기능이 없기 때문에 데이터 개수를 요청하지 않는다
+  - Subscription을 사용하지 않고 Disposable이라는 구독 해지 메서드가 있는 인터페이스를 사용하게 된다.
+    - dispose: 구독을 해지 한다.
+    - isDisposed: 구독을 해지하면 true, 해지하지 않으면 false를 반환한다.
+  - 데이터를 교환할 때 데이터 개수를 요청하지 않고 바로 Observer에 통지된다.
