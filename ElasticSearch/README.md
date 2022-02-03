@@ -17,3 +17,11 @@ Apache Lucene 기반의 Java 오픈 소스 분산 검색 엔진
 - Column -> Field
 - Document -> Row
 - SQL -> Query DSL
+
+## Elastic Search 아키텍처
+
+### Cluster
+
+- 가장 큰 시스템 단위, 최소 하나 이상의 노드로 이루어진 노드들의 집합
+- 서로 다른 클러스터는 데이터의 접근, 교환을 할 수 없는 독립적인 시스템으로 유지
+- 여러대의 서버가 하나의 클러스터 혹은 하나의 서버에 여러 갱의 클러스타 존재
