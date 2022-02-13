@@ -174,3 +174,30 @@ Flowable<Long> flowable = Flowable.fromCallable(() -> System.currentTimeMillis()
 
 - 생산자와 소비자 사이에서 이루어지는 처리를 외부 변수를 참조해 바꾸면 비동기 처리에 영향을 주게된다.
 - 비동기 처리할 때는 생산자에서 소비자까지의 처리가 노출되지 않게 폐쇄적으로 개발하면 어느 정도 위험을 줄일 수 있다.
+
+### Cold 생산자, Hot 생산자
+
+- Cold 생산자: 1개의 소비자와 구독 관계를 맺는다.
+  - Cold 생산자가 통지하는 데이터의 타임라인은 구독할 때 마다 생성된다
+- Hot 생산자: 여러개의 소비자와 구독 관계를 맺는다
+
+  - Hot 생산자는 이미 생성한 데이터의 타임라인에 나중에 소비자가 참가하는 것을 허용한다
+
+- RxJava에서 생성 메서드로 생성된 생성자는 기본으로 Cold 생산자이다.
+- Hot 생산자르 생성하려면 Cold 생산자에서 Hot 생산자로 변환하는 메서드를 호출하거나 뒤에서 Processor와 Subject를 생성해야 한다.
+
+### ConnectableFlowable, ConnectableObservable
+
+ConnectableFlowable, ConnectableObservable은 Hot Flowable, Observable이며, 여러 Subscriber/Observer에서 동시에 구독할 수 있다.
+
+- Cold와 달리 subscribe 메서드를 호출해도 처리를 시작하지 않고 connect 메서드를 호출해야 처리를 시작하다
+- 처리를 시작하기 전에 여러 Subscriber/Observer에서 구독하게 하고 그 후에 처리해 처음 부터 동시에 여러 구독자에게 데이터를 통지할 수 있다.
+
+- refCount: ConnectableFlowable, ConnectableObservable에서 새로운 Flowable, Observable을 생성한다
+
+  - Flowable, Observable은 이미 다른 소비자를 구독하고 있다면 도중에 구독하더라도 같은 타임라인에서 생성되는 데이터를 통지한다.
+  - refCount 메서드에서 생성한 Flowable, Observable는 더이상 ConnectableFlowable, ConnectableObservable이 아니므로 connect 메서드가 없다
+
+- autoConnect: ConnectableFlowable, ConnectableObservable 지정한 개수의 구독이 시작된 시점에 처리하는 Flowable, Observable 생성
+  - autoConnect 메서드에서 인자 없이 생성하면 처음 subscribe 메서드가 호출된 시점에 처리를 시작
+  - autoConnect 메서드에서 인자를 구독 개수를 지정한다면 지정한 개수에 도달한 시점에서 처리를 시작한다
