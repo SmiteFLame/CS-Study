@@ -126,3 +126,11 @@ Fetch Join
 - @PostUpdate: 해당 엔티티를 업데이트 한 이후
 - @PreRemove: 해당 엔티티를 삭제하기 이전
 - @PostRemove: 해당 엔티티를 삭제한 이후
+
+### JPA 문
+
+1. find: 단건 조회
+2. findAll: List 조회
+3. findById: PK 조회
+4. findBy속성: 속성 조회
+5. findBy객체\_속성: 왜래키 속성 조회 (EX: findByUser_UserId)
