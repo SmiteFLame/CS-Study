@@ -201,3 +201,15 @@ ConnectableFlowable, ConnectableObservable은 Hot Flowable, Observable이며, �
 - autoConnect: ConnectableFlowable, ConnectableObservable 지정한 개수의 구독이 시작된 시점에 처리하는 Flowable, Observable 생성
   - autoConnect 메서드에서 인자 없이 생성하면 처음 subscribe 메서드가 호출된 시점에 처리를 시작
   - autoConnect 메서드에서 인자를 구독 개수를 지정한다면 지정한 개수에 도달한 시점에서 처리를 시작한다
+
+## 마블 다이어그램
+
+RxJava의 JavaDoc이나 ReactiveX 문서를 읽다 보면 화려한 원형이나 사각형 등의 도형과 화살표가 들어간 그림
+
+- 리액티브 프로그래밍에서 시간 경과에 따라 어떻게 데이터가 전달되고 변화되는 지를 표현한다.
+- Flowable/Observable에서 메서드를 호출할 때 시간의 경과에 따라 데이터가 어떻게 변화하는지를 설명하는데 사용한다.
+
+- filter 메서드: Flowable과 Overservable에 있는 메서드로, 모두 같은 처리한다.
+  - 원본 데이터 중에서 지정한 조건에 맞는 데이터만을 통지한다.
+  - 인자를 받으며 인자를 통해서 어떤 데이터를 받거나 제외할지 판단하는 함수형 인터페이스를 받는다.
+  - 결과가 [true]인 데이터만 반환한다.
