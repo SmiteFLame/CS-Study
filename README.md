@@ -23,6 +23,7 @@
 - [Kotlin](https://github.com/SmiteFLame/CS-Study/blob/master/Kotlin/README.md)
 - [객체지향](https://github.com/SmiteFLame/CS-Study/blob/master/OOP/README.md)
 - [Reactive](https://github.com/SmiteFLame/CS-Study/blob/master/Reactive/README.md)
+- [Airflow](https://github.com/SmiteFLame/CS-Study/blob/master/AirFlow/README.md)
 
 ### Backend 역량
 
@@ -30,7 +31,7 @@
 - [Spring](https://github.com/SmiteFLame/CS-Study/blob/master/Spring/README.md)
 - [JPA](https://github.com/SmiteFLame/CS-Study/blob/master/JPA/README.md)
 - [ElasticSearch](https://github.com/SmiteFLame/CS-Study/blob/master/ElasticSearch/README.md)
-- [AKKA](https://github.com/SmiteFLame/CS-Study/blob/master/Akka/README.md)
+- [AKKA](https://github.com/SmiteFLame/CS-Study/blob/master/AKKA/README.md)
 
 ### FrontEnd 역량
 
