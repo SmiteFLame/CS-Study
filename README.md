@@ -21,6 +21,7 @@
 
 - [JAVA](https://github.com/SmiteFLame/CS-Study/blob/master/JAVA/README.md)
 - [Kotlin](https://github.com/SmiteFLame/CS-Study/blob/master/Kotlin/README.md)
+- [Scala](https://github.com/SmiteFLame/CS-Study/blob/master/Scala/README.md)
 - [객체지향](https://github.com/SmiteFLame/CS-Study/blob/master/OOP/README.md)
 - [Reactive](https://github.com/SmiteFLame/CS-Study/blob/master/Reactive/README.md)
 - [Airflow](https://github.com/SmiteFLame/CS-Study/blob/master/AirFlow/README.md)
