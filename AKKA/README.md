@@ -234,7 +234,9 @@ JVM: 표준 동시성 프로그래밍 모델
 
 ## 아카 액터
 
-### 액터 시스템
+### ActorSystem
+
+actor를 내부에서 생성하고 동작하게 담고 잇는 컨테이너, 하나의 ActorSystem은 같은 JVM에서 돌아간다
 
 - 최초의 액터는 Supervisor, 모든 액터는 같은 애플리케이션의 일부분 이다
 - 모든 아카 애플리케이션이 반드시 맨 처음 해야 되는 것은 ActorSystem을 만드는 것이다
@@ -254,10 +256,35 @@ JVM: 표준 동시성 프로그래밍 모델
 - 한 번에 하나씩 우편함을 도착한 순서대로 메시지를 처리한다
 - Actor의 주소를 담고 있는 데이터형이다
 - Actor는 해당 객체로 접근하여 해당 actor의 주소로 서로의 메시지를 던져서 해당 함수를 호출한다
+- Actor의 주소를 담고 있는 데이터 형이다: 해당 객체로 접근하여 public Method를 쓰는 구조가 아니라 해당 Actor의 주소로 서로 메시지를 던져서 해당 함수를 호출한다.
 
 ### Props
 
 - Actor에 구현 클래스와 해당 구현클래스의 생성자에 필요한 매개변수를 주입하기 위한 객체
+
+### ActorContext
+
+- 해당 액터의 관점에서 보는 ActorSystem의 모습을 나타내는 객체
+- 해당 Context에서 Actor를 생성하면 ActorSystem안에 같이 있지만 자신을 기준으로 생성되어 자식이 되는 것
+
+```Java
+//  actorSystem에서 actorOf라는 함수를 사용해 actor를 생성한다.
+// 첫 번째 매개변수는 Props, 두 번째 매개변수는 actor 이름이 들어간다.
+public class Main{
+  public static void main(String[] args){
+    ActorSystem actorSystem = ActorSystem.create("TestSystem");
+    ActorRef helloWorld = actorSystem.actorOf(Props.create(HelloWorld.class), "helloWorldActor")
+  }
+}
+
+public class HelloWorld extends UpTypedActor{
+  public HelloWorld(){
+    ActorRef child = context().actorOf(Props.create(HelloChild.class), "helloChildActor");
+  }
+}
+```
+
+helloChildActor는 helloWorldActor의 자식이 되어 이 둘의 생명 주기를 같이 한다.
 
 ### 디스패처
 
