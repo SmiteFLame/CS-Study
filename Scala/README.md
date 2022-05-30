@@ -108,3 +108,10 @@ Monad는 어떤 값을 감싸는 Wrapper인데, 그 중에서도 위 3개의 Law
 4. 명시성 우선 규칙: 코드가 그 상태 그대로 타입 검사를 통과 한다면  암시를 통한 변환을 시도치 않음
 
 유사하다고 생각되는 변수를 찾아서 직접 사용을 한다.
+
+## Slick
+
+Scala Language-Intergrated Connection Kit(Reactive Functional Relational Mapping for Scala)
+
+- Scala는 Java와 호환 되므로 JDBC 라이브러리를 이용해서 DB 접속, 쿼리 수행 가능
+- 함수형 언어에서 함수 값으로 데이터를 다뤄야 할 일이 많기 때문에 코딩이 편해진다.
