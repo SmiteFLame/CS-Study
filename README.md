@@ -17,14 +17,18 @@
 - [네트워크](https://github.com/SmiteFLame/CS-Study/blob/master/NT/README.md)
 - [데이터베이스](https://github.com/SmiteFLame/CS-Study/blob/master/DB/README.md)
 
-### 언어 및 코딩 스타일
+### 언어
 
 - [JAVA](https://github.com/SmiteFLame/CS-Study/blob/master/JAVA/README.md)
 - [Kotlin](https://github.com/SmiteFLame/CS-Study/blob/master/Kotlin/README.md)
 - [Scala](https://github.com/SmiteFLame/CS-Study/blob/master/Scala/README.md)
+
+### 개발론
+
 - [객체지향](https://github.com/SmiteFLame/CS-Study/blob/master/OOP/README.md)
 - [Reactive](https://github.com/SmiteFLame/CS-Study/blob/master/Reactive/README.md)
 - [Airflow](https://github.com/SmiteFLame/CS-Study/blob/master/AirFlow/README.md)
+- [함수형 프로그래밍](https://github.com/SmiteFLame/CS-Study/blob/master/Function/README.md)
 
 ### Backend 역량
 
