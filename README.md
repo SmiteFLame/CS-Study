@@ -37,6 +37,7 @@
 - [JPA](https://github.com/SmiteFLame/CS-Study/blob/master/JPA/README.md)
 - [ElasticSearch](https://github.com/SmiteFLame/CS-Study/blob/master/ElasticSearch/README.md)
 - [AKKA](https://github.com/SmiteFLame/CS-Study/blob/master/AKKA/README.md)
+- [Spark](https://github.com/SmiteFLame/CS-Study/blob/master/Spark/README.md)
 
 ### FrontEnd 역량
 
